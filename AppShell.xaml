@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppComercios.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppComercios"
+    xmlns:vistas="clr-namespace:AppComercios.Vistas"
+    Title="AppComercios">
+
+
+
+
+    <FlyoutItem
+    Title="Productivity Tools"
+    Icon="dotnet_bot.png"
+    Route="ProductivityTools">
+
+
+        <ShellContent
+            Title="Mapa"
+            ContentTemplate="{DataTemplate vistas:HomeView}"
+            Icon="dotnet_bot.png"
+            />
+
+        <ShellContent
+            Title="Mapa"
+            ContentTemplate="{DataTemplate vistas:MapaView}"
+            Icon="dotnet_bot.png"
+            />
+            
+            <ShellContent
+            Title="Color Generator"
+            ContentTemplate="{DataTemplate vistas:PerfilView}"
+            Icon="dotnet_bot.png"
+            />
+            
+        
+    </FlyoutItem>
+    
+    
+    
+
+</Shell>
