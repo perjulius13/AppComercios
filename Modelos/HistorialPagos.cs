@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppComercios.Modelos
 {
-    internal class HistorialPagos
+    public  class HistorialPagos
     {
 
         public string Id { get; set; } = string.Empty;
