@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppComercios.Vistas.RealizarPago"
+             Title="Realizar Pago">
+    <VerticalStackLayout>
+     
+
+
+
+        <Grid Padding="20"
+          RowSpacing="10"
+          ColumnSpacing="10"
+              Margin="0,20,0,0">
+
+            <!-- Definición de filas -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Definición de columnas -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Título -->
+            <Label Text="Pago de plaza"
+               FontSize="24"
+               FontAttributes="Bold"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"/>
+
+            <!-- Etiqueta -->
+            <Label 
+                Text="Numero de Plaza:"
+               Grid.Row="1"
+               Grid.Column="0"
+               VerticalOptions="Center"
+                Padding="10"
+                />
+
+            
+            <Label Text="1"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"
+                   Padding="10"
+                   />
+
+
+            <Label 
+          Text="Fecha de asignacion:"
+         Grid.Row="2"
+         Grid.Column="0"
+         VerticalOptions="Center"
+          Padding="10"
+          />
+
+
+            <Label Text="13/07/2026"
+             Grid.Row="2"
+             Grid.Column="1"
+             HorizontalOptions="Center"
+             Padding="10"
+             />
+
+
+            <Label 
+ Text="Total:"
+Grid.Row="3"
+Grid.Column="0"
+VerticalOptions="Center"
+ Padding="10"
+ />
+
+
+            <Label Text="$50"
+    Grid.Row="3"
+    Grid.Column="1"
+    HorizontalOptions="Center"
+    Padding="10"
+    />
+
+
+        </Grid>
+
+
+        <!-- Botón -->
+        <Button Text="Realizar Pago"
+ Margin="30"
+     CornerRadius="15"
+ HorizontalOptions="Fill"/>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

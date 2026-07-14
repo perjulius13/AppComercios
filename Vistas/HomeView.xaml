@@ -12,14 +12,27 @@
 
 
 
-
-        <VerticalStackLayout Margin="30" BackgroundColor="LightGray">
+        <VerticalStackLayout Margin="30" 
+                             BackgroundColor="#f2f5f5"
+                             HeightRequest="300"
+                             >
             
             <Label 
-                Text="Pendientes"            
-                HorizontalOptions="Center" />
+                Text="Pagos pendientes:"            
+                HorizontalOptions="Center"
+                Padding="10"/>
 
-            <Button Text="Realizar Pago"/>
+            <Label 
+    Text="No hay pendientes"            
+    HorizontalOptions="Center"
+    Padding="10"/>
+
+
+            <Button 
+    Text="Realizar Pago"
+        Margin="10,20,10,20"
+                CornerRadius="20"
+    />
 
 
         </VerticalStackLayout>

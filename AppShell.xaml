@@ -17,7 +17,7 @@
 
 
         <ShellContent
-            Title="Mapa"
+            Title="Home"
             ContentTemplate="{DataTemplate vistas:HomeView}"
             Icon="dotnet_bot.png"
             />
@@ -29,8 +29,8 @@
             />
             
             <ShellContent
-            Title="Color Generator"
-            ContentTemplate="{DataTemplate vistas:PerfilView}"
+            Title="Pagos"
+            ContentTemplate="{DataTemplate vistas:RealizarPago}"
             Icon="dotnet_bot.png"
             />
             
