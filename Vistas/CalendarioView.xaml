@@ -4,9 +4,93 @@
              x:Class="AppComercios.Vistas.CalendarioView"
              Title="CalendarioView">
     <VerticalStackLayout>
+
+
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Calendario de Trabajo"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+
+        <Grid 
+            Margin="30"
+            Padding="10"
+            BackgroundColor="AliceBlue"
+            >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label
+                Grid.Column="0"
+                Grid.Row="0"
+                Text="Puesto"
+                HorizontalOptions="Center"
+                Padding="10"
+                />
+
+            <Label
+                x:Name="txtnombrepuesto"
+                Grid.Column="1"
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                Padding="10"
+                />
+
+            <Label
+     Grid.Column="0"
+     Grid.Row="1"
+     Text="Plaza"
+     HorizontalOptions="Center"
+                Padding="10"
+     />
+
+            <Label
+     x:Name="txtplaza"
+     Grid.Column="1"
+     Grid.Row="1"
+     HorizontalOptions="Center"
+                Padding="10"
+     />
+
+
+
+            <Label
+    Grid.Column="0"
+    Grid.Row="2"
+    Text="Fecha Asignada"
+    HorizontalOptions="Center"
+                Padding="10"
+    />
+
+            <Label
+    x:Name="txtfecha"
+    Grid.Column="1"
+    Grid.Row="2"
+    HorizontalOptions="Center"
+                Padding="10"
+    />
+
+
+
+        </Grid>
+
+
+
+
+
+
+
+
     </VerticalStackLayout>
 </ContentPage>

@@ -14,6 +14,7 @@ public partial class CalendarioView : ContentPage
     public CalendarioView()
 	{
 		InitializeComponent();
+        BindingContext = this; 
 	}
 
 
@@ -25,7 +26,13 @@ public partial class CalendarioView : ContentPage
         var items = await servicio.ListarAsignaciones();
         lista = items.ToList();
         if (lista.Count > 0)
-            elemento = lista[0]; 
+            elemento = lista[1];
+
+
+        txtnombrepuesto.Text = elemento.NombrePuesto;
+        txtfecha.Text = elemento.FechaAsig.ToShortDateString();
+        txtplaza.Text = elemento.NumeroPlaza.ToString(); 
+
     }
 
 
