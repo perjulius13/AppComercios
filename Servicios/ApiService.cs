@@ -72,7 +72,7 @@ namespace AppComercios.Servicios
             try
             {
                 // Realiza el POST y serializa automáticamente a JSON
-                HttpResponseMessage response = await _cliente.PutAsJsonAsync<AsignacionPlazaClass>(url, asig);
+                HttpResponseMessage response = await _cliente.PostAsJsonAsync<AsignacionPlazaClass>(url, asig);
 
                 // Verifica si el código de estado es un 200-299
                 if (response.IsSuccessStatusCode)
