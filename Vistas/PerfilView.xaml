@@ -26,18 +26,27 @@
 
             <Label 
                 Padding="10"
-                Text="Telefono: 2222398762"/>
+                x:Name="txttelefono"
+                Text="Telefono: "/>
 
             <Label 
                 Padding="10"
-                Text="Nombre: Axel "/>
+                x:Name="txtnombre"
+                Text="Nombre:  "/>
 
             <Label 
                 Padding="10"
-                Text="Apellidos: Flores Tonacatl"/>
+                x:Name="txtapellido"
+                Text="Apellidos:"/>
+
 
             <Label 
-                Padding="10"
+    Padding="10"
+    x:Name="txtHabilitado"
+    Text="Estatus:"/>
+
+            <Label 
+                Padding="10"                
                 Text="Tipo de puesto: SIN LUGAR ASIGNADO"/>
 
         </VerticalStackLayout>

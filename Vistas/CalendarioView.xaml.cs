@@ -9,7 +9,7 @@ public partial class CalendarioView : ContentPage
 
     List<AsingacionPlazaClass> lista = new();
 
-    AsingacionPlazaClass elemento = new AsingacionPlazaClass(); 
+    
 
     public CalendarioView()
 	{
@@ -23,15 +23,11 @@ public partial class CalendarioView : ContentPage
     protected override async void OnAppearing()
     {
         var servicio = new ApiService();
-        var items = await servicio.ListarAsignaciones();
+        var items = await servicio.CalendarioPuestos(1);
         lista = items.ToList();
-        if (lista.Count > 0)
-            elemento = lista[1];
+        
 
 
-        txtnombrepuesto.Text = elemento.NombrePuesto;
-        txtfecha.Text = elemento.FechaAsig.ToShortDateString();
-        txtplaza.Text = elemento.NumeroPlaza.ToString(); 
 
     }
 

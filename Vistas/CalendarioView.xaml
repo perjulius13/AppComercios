@@ -12,78 +12,56 @@
             HorizontalOptions="Center" />
 
 
-        <Grid 
-            Margin="30"
-            Padding="10"
-            BackgroundColor="AliceBlue"
-            >
+        <CollectionView
+     x:Name="cvlista"
+     SelectionMode="Single"
+     Margin="30"
+     ItemsSource="{Binding lista}">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+            <CollectionView.ItemTemplate>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
+                <DataTemplate>
 
 
 
-            <Label
-                Grid.Column="0"
-                Grid.Row="0"
-                Text="Puesto"
-                HorizontalOptions="Center"
-                Padding="10"
-                />
+                    <Grid>
 
-            <Label
-                x:Name="txtnombrepuesto"
-                Grid.Column="1"
-                Grid.Row="0"
-                HorizontalOptions="Center"
-                Padding="10"
-                />
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-            <Label
-     Grid.Column="0"
-     Grid.Row="1"
-     Text="Plaza"
-     HorizontalOptions="Center"
-                Padding="10"
-     />
+                        <Label
+                         Text="{Binding Id, StringFormat='ID {0}'}"
+                         
+                         FontSize="20"
+                         FontAttributes="Bold"/>
 
-            <Label
-     x:Name="txtplaza"
-     Grid.Column="1"
-     Grid.Row="1"
-     HorizontalOptions="Center"
-                Padding="10"
-     />
+                        <Label
+                         Grid.Row="1"
+                         Text="{Binding Cantidad, StringFormat='Pago $ {0}' }"/>
 
+                        <Label
+                         Grid.Row="2"
+                         Text="{Binding FechaPag}"
+                         TextColor="Gray"/>
 
+                        <Label
+                         Grid.Row="3"
+                         Text="{Binding Plaza}"
+                         TextColor="Green"/>
 
-            <Label
-    Grid.Column="0"
-    Grid.Row="2"
-    Text="Fecha Asignada"
-    HorizontalOptions="Center"
-                Padding="10"
-    />
-
-            <Label
-    x:Name="txtfecha"
-    Grid.Column="1"
-    Grid.Row="2"
-    HorizontalOptions="Center"
-                Padding="10"
-    />
+                    </Grid>
 
 
 
-        </Grid>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
 
 
 
