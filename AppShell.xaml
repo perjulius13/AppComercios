@@ -9,6 +9,23 @@
 
 
 
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid              
+                Background="LightSlateGray"
+                  HeightRequest="100">
+                
+                <Label Text="Mercadito Perote"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    
+    
+
 
     <FlyoutItem
     Title="Home"    
@@ -18,19 +35,19 @@
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate vistas:HomeView}"
-            Icon="dotnet_bot.png"
+            Icon="hogar.png"
             />
 
         <ShellContent
             Title="Mapa"
             ContentTemplate="{DataTemplate vistas:MapaView}"
-            Icon="dotnet_bot.png"
+            Icon="mapa.png"
             />
             
             <ShellContent
             Title="Pagos"
             ContentTemplate="{DataTemplate vistas:RealizarPago}"
-            Icon="dotnet_bot.png"
+            Icon="dinero.png"
             />
             
         
