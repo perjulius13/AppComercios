@@ -6,61 +6,41 @@
     <VerticalStackLayout>
 
 
+
+        <ActivityIndicator x:Name="actividad"/>
+
         <Label 
             Text="Calendario de Trabajo"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-
         <CollectionView
-     x:Name="cvlista"
-     SelectionMode="Single"
-     Margin="30"
-     ItemsSource="{Binding lista}">
-
+            ItemsLayout="VerticalList"
+            x:Name="lstcalendario"
+            SelectionChanged="OnCollectionViewSelectionChanged"
+           SelectionMode="Single"
+            >
             <CollectionView.ItemTemplate>
-
                 <DataTemplate>
+                    <Border Padding="10"
+                            Margin="10"                            
+                            >
 
+                        <VerticalStackLayout>
+                            
+                            <Label Text="{Binding NumeroPlaza, StringFormat='Plaza: {0}' }"/>
 
+                            <Label Text="{Binding FechaAsig, StringFormat='Fecha: {0}' }"/>
 
-                    <Grid>
+                            <Label Text="{Binding Pagado, StringFormat='Estatus del pago: {0}' }"/>
+                            
+                        </VerticalStackLayout>
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
+                        
 
-                        <Label
-                         Text="{Binding Id, StringFormat='ID {0}'}"
-                         
-                         FontSize="20"
-                         FontAttributes="Bold"/>
-
-                        <Label
-                         Grid.Row="1"
-                         Text="{Binding Cantidad, StringFormat='Pago $ {0}' }"/>
-
-                        <Label
-                         Grid.Row="2"
-                         Text="{Binding FechaPag}"
-                         TextColor="Gray"/>
-
-                        <Label
-                         Grid.Row="3"
-                         Text="{Binding Plaza}"
-                         TextColor="Green"/>
-
-                    </Grid>
-
-
-
+                    </Border>
                 </DataTemplate>
-
             </CollectionView.ItemTemplate>
-
         </CollectionView>
 
 

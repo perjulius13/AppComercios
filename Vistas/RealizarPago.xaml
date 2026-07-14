@@ -45,7 +45,8 @@
                 />
 
             
-            <Label Text="1"
+            <Label
+                x:Name="txtnumplaza"
                    Grid.Row="1"
                    Grid.Column="1"
                    HorizontalOptions="Center"
@@ -62,7 +63,8 @@
           />
 
 
-            <Label Text="13/07/2026"
+            <Label 
+                x:Name="txtfechaasig"
              Grid.Row="2"
              Grid.Column="1"
              HorizontalOptions="Center"
@@ -79,7 +81,8 @@ VerticalOptions="Center"
  />
 
 
-            <Label Text="$50"
+            <Label 
+                x:Name="txttotal"
     Grid.Row="3"
     Grid.Column="1"
     HorizontalOptions="Center"
@@ -94,7 +97,8 @@ VerticalOptions="Center"
         <Button Text="Realizar Pago"
  Margin="30"
      CornerRadius="15"
- HorizontalOptions="Fill"/>
+ Clicked="Button_Clicked"
+                />
 
 
 

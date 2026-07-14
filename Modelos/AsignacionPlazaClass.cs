@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppComercios.Modelos
 {
-    internal class AsingacionPlazaClass
+    internal class AsignacionPlazaClass
     {
 
         public int Id { get; set; }
@@ -20,6 +20,7 @@ namespace AppComercios.Modelos
         public int? IduserReg { get; set; }
 
         public bool Pagado { get; set; }
+
         public string? NombrePuesto { set; get; } = string.Empty;
 
 
