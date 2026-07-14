@@ -36,10 +36,16 @@
 
 
         </VerticalStackLayout>
-        
-    
 
 
+
+        <Button 
+    Text="Consulta tu agenda"
+        Margin="30"
+                CornerRadius="20"
+           
+            Clicked="Button_Clicked"
+    />
 
 
 

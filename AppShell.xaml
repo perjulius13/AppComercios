@@ -11,8 +11,7 @@
 
 
     <FlyoutItem
-    Title="Productivity Tools"
-    Icon="dotnet_bot.png"
+    Title="Home"    
     Route="ProductivityTools">
 
 
@@ -36,8 +35,16 @@
             
         
     </FlyoutItem>
-    
-    
-    
+
+
+    <ShellContent 
+        Title="Mi perfil"
+        ContentTemplate="{DataTemplate vistas:PerfilView}"
+        />
+
+
+
+
+
 
 </Shell>
