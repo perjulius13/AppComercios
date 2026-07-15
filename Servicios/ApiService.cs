@@ -107,6 +107,9 @@ namespace AppComercios.Servicios
 
 
 
+
+
+
         public async Task<bool> ActualizarSaldoUser(UsuariosClass user )
         {
             string url = "https://www.urbanitydata.com/api/Cobros/ActualizarSaldoUserApp";
@@ -144,6 +147,18 @@ namespace AppComercios.Servicios
             }
 
             return new List<PlazaClass>();
+        }
+
+
+        public async Task<PlazaClass> GetPlazaById(int idplaza)
+        {
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Plaza/GetPlazabyId?id={idplaza}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<PlazaClass>(json);
+            }
+            return new PlazaClass();
         }
 
 

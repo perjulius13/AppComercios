@@ -19,6 +19,18 @@
                   
                   />
 
+        <Label 
+            x:Name="txtTotal"
+            Padding="5"
+            HorizontalOptions="Center"
+            />
+
+        <Label 
+    x:Name="txtocupadas"
+            Padding="5"
+            HorizontalOptions="Center"
+    />
+
 
 
     </VerticalStackLayout>

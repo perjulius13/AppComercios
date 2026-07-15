@@ -2,16 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.MiPlazaView"
+             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
              Title="Mi Plaza">
     
     <VerticalStackLayout Margin="30">
         
         <Label 
-            Text="Numero de plaza 15"
+            x:Name="txtplaza"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
-        
+
+
+        <Label 
+    x:Name="txtcosto"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" />
+
+
+        <maps:Map x:Name="map" 
+                  HeightRequest="400"
+                  IsShowingUser="True"                  
+                  />
+
+
+
+
     </VerticalStackLayout>
     
 </ContentPage>

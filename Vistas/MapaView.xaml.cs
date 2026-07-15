@@ -17,13 +17,17 @@ public partial class MapaView : ContentPage
 
     private static readonly Location PeroteCenter = new(19.56188, -97.24406);
 
-    List<PlazaClass> lista = new List<PlazaClass>(); 
+    List<PlazaClass> lista = new List<PlazaClass>();
+
+
+    List<PlazaClass> listaocupadas = new List<PlazaClass>();
 
 
     protected override async void OnAppearing()
     {
         var servicio = new ApiService();
         lista = await servicio.ListarPlazas();
+        listaocupadas = lista.Where(e => e.Estatus == 2).ToList();
         string titulo = ""; 
 
         foreach (var item in lista)
@@ -31,6 +35,10 @@ public partial class MapaView : ContentPage
             titulo = "Plaza # " + item.Numero; 
             addmarker(item.Latitud, item.Longitud, titulo);
         }
+
+
+        txtTotal.Text = "Total de Plazas: " + lista.Count;
+        txtocupadas.Text = "Plazas ocupadas " + listaocupadas.Count; 
 
     }
 
