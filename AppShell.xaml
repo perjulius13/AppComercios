@@ -20,6 +20,8 @@
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center" />
+                
+                                
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
@@ -49,8 +51,15 @@
             ContentTemplate="{DataTemplate vistas:HistorialPagView}"
             Icon="dinero.png"
             />
-            
-        
+
+
+          <ShellContent
+            Title="Mi Plaza"
+            ContentTemplate="{DataTemplate vistas:MiPlazaView}"
+            Icon="plaza.png"
+            />
+
+
     </FlyoutItem>
 
 
@@ -58,6 +67,24 @@
         Title="Mi perfil"
         ContentTemplate="{DataTemplate vistas:PerfilView}"
         />
+
+    <ShellContent 
+    Title="Ayuda"
+    ContentTemplate="{DataTemplate vistas:AyudaView}"
+    />
+
+
+
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <Button Text="Cerrar Sesion"
+                    Margin="10"
+                    CornerRadius="20"
+                    BackgroundColor="LightSlateGray"
+                    />
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
 
 
 

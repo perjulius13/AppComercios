@@ -49,6 +49,12 @@
                 Padding="10"                
                 Text="Tipo de puesto: SIN LUGAR ASIGNADO"/>
 
+
+            <Label 
+    Padding="10"
+                x:Name="txtsaldo"
+    Text="Saldo: "/>
+
         </VerticalStackLayout>
         
         

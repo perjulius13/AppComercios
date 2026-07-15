@@ -26,7 +26,7 @@ public partial class PerfilView : ContentPage
 		txtnombre.Text = "Nombre: " + user.Nombre;
         txtapellido.Text = "Apellidos: " + user.Apellidos;
         txttelefono.Text = "Telefono: " + user.Telefono;
-
+		txtsaldo.Text = "Saldo: " + user.Saldo; 
 		if (user.Habilitado)
 			txtHabilitado.Text = "Estatus: Habilitado"; 
 		else

@@ -88,6 +88,9 @@
 	  <MauiXaml Update="Vistas\MapaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vistas\MiPlazaView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\PerfilView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

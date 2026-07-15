@@ -23,7 +23,7 @@
                 Padding="10"/>
 
             <Label 
-    Text="No hay pendientes"            
+    x:Name="txtpendientes"
     HorizontalOptions="Center"
     Padding="10"/>
 
@@ -32,6 +32,7 @@
     Text="Realizar Pago"
         Margin="10,20,10,20"
                 CornerRadius="20"
+                Clicked="Button_Clicked_1"
     />
 
 

@@ -22,6 +22,8 @@ namespace AppComercios.Modelos
 
         public int Usuarioreg { get; set; }
 
+        public double Saldo { get; set; }
+
 
     }
 }
