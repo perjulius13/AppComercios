@@ -46,12 +46,7 @@
             Clicked="Button_Clicked"
     />
 
-        <Button 
-    Text="Historial de Pagos"
-        Margin="30"
-                CornerRadius="20"           
-            Clicked="Button_Clicked_1"
-    />
+
 
 
 

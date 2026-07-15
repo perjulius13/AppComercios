@@ -46,7 +46,7 @@
             
             <ShellContent
             Title="Pagos"
-            ContentTemplate="{DataTemplate vistas:RealizarPago}"
+            ContentTemplate="{DataTemplate vistas:HistorialPagView}"
             Icon="dinero.png"
             />
             

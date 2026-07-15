@@ -98,6 +98,7 @@ VerticalOptions="Center"
  Margin="30"
      CornerRadius="15"
  Clicked="Button_Clicked"
+                x:Name="btnpagar"
                 />
 
 
