@@ -18,13 +18,30 @@ public partial class HistorialPagView : ContentPage
     }
 
 
+
+    DateTime fecha1 = new DateTime();
+    DateTime fecha2 = new DateTime();
+
+    string f1 = "";
+    string f2 = ""; 
+
+
+        
+
     List<CobroPlazaClass> lista = new List<CobroPlazaClass>(); 
 
     protected override async void OnAppearing()
     {
+
+        fecha1 = DateTime.Now;
+        fecha2 = DateTime.Now;
+
+        f1 = fecha1.Day + "-" + fecha1.Month + "-" + fecha1.Year;
+        f2 = fecha2.Day + "-" + fecha2.Month + "-" + fecha2.Year;
+
         var servicio = new ApiService();
 
-        lista = await servicio.ListarCobrosUser();
+        lista = await servicio.ListarCobrosUser(f1, f2);
 
 
         cvComercios.ItemsSource = lista; 

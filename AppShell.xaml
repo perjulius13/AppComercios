@@ -31,7 +31,8 @@
 
     <FlyoutItem
     Title="Home"    
-    Route="ProductivityTools">
+        Icon="casa.png"
+    >
 
 
         <ShellContent
@@ -66,11 +67,13 @@
     <ShellContent 
         Title="Mi perfil"
         ContentTemplate="{DataTemplate vistas:PerfilView}"
+        Icon="profile.png"
         />
 
     <ShellContent 
     Title="Ayuda"
     ContentTemplate="{DataTemplate vistas:AyudaView}"
+        Icon="informacion.png"
     />
 
 

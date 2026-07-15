@@ -26,9 +26,9 @@ namespace AppComercios.Servicios
         }
 
 
-        public async Task<List<CobroPlazaClass>> ListarCobrosUser()
+        public async Task<List<CobroPlazaClass>> ListarCobrosUser(string f1, string f2)
         {
-            var response = await _cliente.GetAsync("https://www.urbanitydata.com/api/Cobros/ListarCobroPuestos");
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Cobros/ListarCobroPuestos?f1={f1}&f2={f2}");
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
