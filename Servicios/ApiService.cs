@@ -134,7 +134,17 @@ namespace AppComercios.Servicios
 
 
 
+        public async Task<List<PlazaClass>> ListarPlazas()
+        {
+            var response = await _cliente.GetAsync("https://www.urbanitydata.com/api/Plaza/GetPlazas");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<PlazaClass>>(json);
+            }
 
+            return new List<PlazaClass>();
+        }
 
 
     }
