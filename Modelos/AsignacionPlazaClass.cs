@@ -21,7 +21,7 @@ namespace AppComercios.Modelos
 
         public bool Pagado { get; set; }
 
-        //public string? NombrePuesto { set; get; } = string.Empty;
+        public double? CostoPlaza { get; set; }
 
 
 

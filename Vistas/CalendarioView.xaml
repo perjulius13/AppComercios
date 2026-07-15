@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.CalendarioView"
-             Title="CalendarioView">
+             Title="Calendario">
     <VerticalStackLayout>
 
 
@@ -32,7 +32,9 @@
 
                             <Label Text="{Binding FechaAsig, StringFormat='Fecha: {0}' }"/>
 
-                            <Label Text="{Binding Pagado, StringFormat='Estatus del pago: {0}' }"/>
+                            <Label Text="{Binding EstatusPago}"/>
+                            
+                           
                             
                         </VerticalStackLayout>
 

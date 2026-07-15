@@ -24,7 +24,7 @@ public partial class RealizarPago : ContentPage
 
 		txtnumplaza.Text = item.NumeroPlaza.ToString();
 		txtfechaasig.Text = item.FechaAsig.ToShortDateString();
-		txttotal.Text = "50";
+		txttotal.Text = item.CostoPlaza.ToString(); 
 
 		if (item.Pagado)
 			btnpagar.IsEnabled = false; 

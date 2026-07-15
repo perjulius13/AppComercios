@@ -26,6 +26,19 @@ namespace AppComercios.Servicios
         }
 
 
+        public async Task<List<CobroPlazaClass>> ListarCobrosUser()
+        {
+            var response = await _cliente.GetAsync("https://www.urbanitydata.com/api/Cobros/ListarCobroPuestos");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<CobroPlazaClass>>(json);
+            }
+
+            return new List<CobroPlazaClass>();
+        }
+
+
 
 
         public async Task<UsuariosClass> GetDatosUser(int iduser)
