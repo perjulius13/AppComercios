@@ -7,45 +7,140 @@
         
         
         <Label 
-            Text="Bienvenido! "            
-            HorizontalOptions="Center" />
+            Text="Bienvenido! Andres Gonzalez "            
+            HorizontalOptions="Center"
+            FontSize="16"
+            FontAttributes="Bold"
+            Padding="10"/>
+
+
+        <Label 
+                Text="Tianguis de Perote"
+                HorizontalOptions="Start"
+            Margin="20,10,0,5"
+               />
+        
+        <Label 
+        Text="18/07/2026"
+        HorizontalOptions="Start"
+    Margin="20,10,0,5"
+       />
 
 
 
-        <VerticalStackLayout Margin="30" 
-                             BackgroundColor="#f2f5f5"
-                             HeightRequest="300"
-                             >
+        <Grid             
+            Margin="20"
+            RowSpacing="15"
+            ColumnSpacing="10"
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                
+            </Grid.RowDefinitions>
             
-            <Label 
-                Text="Pagos pendientes:"            
-                HorizontalOptions="Center"
-                Padding="10"/>
-
-            <Label 
-    x:Name="txtpendientes"
-    HorizontalOptions="Center"
-    Padding="10"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
 
-            <Button 
-    Text="Realizar Pago"
-        Margin="10,20,10,20"
-                CornerRadius="20"
-                Clicked="Button_Clicked_1"
-    />
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0"
+                                 HeightRequest="100"                                 
+                                 BackgroundColor="Azure"
+                                 >
+
+                <Image
+                    Source="facturas.png"
+                    Margin="10"
+                    />
+
+                <Label
+                    Text="Adeudo"
+                    HorizontalOptions="Center"                    
+                    />
+                
+                <Label
+                     Text="$180"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                            />
+            </VerticalStackLayout>
 
 
-        </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Grid.Row="0"
+                                 HeightRequest="100"                                 
+                                  BackgroundColor="Azure"
+                                 >
+                <Image
+                    Source="calendario.png"
+                    Margin="10"
+                    />
+
+                <Label
+        Text="Proximo dia"
+        HorizontalOptions="Center"
+        />
+
+                <Label
+         Text="Lunes"
+        HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                />
+            </VerticalStackLayout>
 
 
 
-        <Button 
-    Text="Consulta tu agenda"
-        Margin="30"
-                CornerRadius="20"           
-            Clicked="Button_Clicked"
-    />
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1"
+                     HeightRequest="100"                                 
+                        BackgroundColor="Azure"
+                     >
+                
+                <Image
+                    Source="alfiler.png"
+                    Margin="10"
+                    />
+
+                <Label
+        Text="Lugar"
+        HorizontalOptions="Center"
+        />
+
+                <Label
+         Text="55 (3 mts)"
+        HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                />
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Grid.Column="1" Grid.Row="1"
+                     HeightRequest="100"                                 
+                    BackgroundColor="Azure"
+                     >
+                <Image
+                    Source="aviso.png"
+                    Margin="10"
+                    />
+
+                <Label
+        Text="Avisos"
+        HorizontalOptions="Center"
+        />
+
+                <Label
+         Text="2 Nuevos"
+        HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                />
+                
+            </VerticalStackLayout>
+
+
+        </Grid>
+
+
+
 
 
 

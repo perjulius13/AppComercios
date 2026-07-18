@@ -34,7 +34,7 @@ public partial class HomeView : ContentPage
                 pendientes++; 
         }
 
-        txtpendientes.Text = (pendientes == 0) ? "No hay pagos pendientes" : "Pendientes: " + pendientes; 
+        //txtpendientes.Text = (pendientes == 0) ? "No hay pagos pendientes" : "Pendientes: " + pendientes; 
 
     }
 
