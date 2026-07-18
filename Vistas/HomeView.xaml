@@ -4,8 +4,8 @@
              x:Class="AppComercios.Vistas.HomeView"
              Title="Home">
     <VerticalStackLayout>
-        
-        
+
+
         <Label 
             Text="Bienvenido! Andres Gonzalez "            
             HorizontalOptions="Center"
@@ -19,7 +19,7 @@
                 HorizontalOptions="Start"
             Margin="20,10,0,5"
                />
-        
+
         <Label 
         Text="18/07/2026"
         HorizontalOptions="Start"
@@ -29,16 +29,16 @@
 
 
         <Grid             
-            Margin="20"
+            Margin="20,30,20,10"
             RowSpacing="15"
             ColumnSpacing="10"
               >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                
+
             </Grid.RowDefinitions>
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -59,9 +59,9 @@
                     Text="Adeudo"
                     HorizontalOptions="Center"                    
                     />
-                
+
                 <Label
-                     Text="$180"
+                     Text="$ 200"
                     HorizontalOptions="Center"
                     FontAttributes="Bold"
                             />
@@ -70,8 +70,13 @@
 
             <VerticalStackLayout Grid.Column="1" Grid.Row="0"
                                  HeightRequest="100"                                 
-                                  BackgroundColor="Azure"
+                                  BackgroundColor="Azure"                                 
                                  >
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </VerticalStackLayout.GestureRecognizers>
+
+
                 <Image
                     Source="calendario.png"
                     Margin="10"
@@ -96,6 +101,10 @@
                         BackgroundColor="Azure"
                      >
                 
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </VerticalStackLayout.GestureRecognizers>
+                
                 <Image
                     Source="alfiler.png"
                     Margin="10"
@@ -107,7 +116,7 @@
         />
 
                 <Label
-         Text="55 (3 mts)"
+         Text="15 (3 mts)"
         HorizontalOptions="Center"
                     FontAttributes="Bold"
                 />
@@ -133,7 +142,7 @@
         HorizontalOptions="Center"
                     FontAttributes="Bold"
                 />
-                
+
             </VerticalStackLayout>
 
 
