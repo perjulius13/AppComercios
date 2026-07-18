@@ -36,7 +36,7 @@ public partial class HistorialPagView : ContentPage
         fecha1 = DateTime.Now;
         fecha2 = DateTime.Now;
 
-        f1 = fecha1.Day + "-" + fecha1.Month + "-" + fecha1.Year;
+        f1 = "01-07-2026";
         f2 = fecha2.Day + "-" + fecha2.Month + "-" + fecha2.Year;
 
         var servicio = new ApiService();

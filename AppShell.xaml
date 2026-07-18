@@ -85,6 +85,7 @@
                     Margin="10"
                     CornerRadius="20"
                     BackgroundColor="LightSlateGray"
+                    Clicked="Button_Clicked"
                     />
         </DataTemplate>
     </Shell.FlyoutFooterTemplate>

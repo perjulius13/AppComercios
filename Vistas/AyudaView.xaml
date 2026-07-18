@@ -3,7 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.AyudaView"
              Title="Ayuda">
+    
+    
     <VerticalStackLayout>
-        
+
+
+
+        <Label
+            Text="Bienvenido al area de ayuda"
+            HorizontalOptions="Center"
+            FontSize="16"
+            FontAttributes="Bold"
+            Padding="20"
+            />
+
+
+
+        <Button 
+            Text="Terminos y condiciones"
+            CornerRadius="30"
+            Margin="40,10,40,10"
+            />
+
+        <Button 
+    Text="Acerca de Nosotros"
+    CornerRadius="30"
+    Margin="40,10,40,10"
+    />
+
+
+        <Button 
+    Text="Aviso de privacidad"
+    CornerRadius="30"
+    Margin="40,10,40,10"
+    />
+
+    
+
+
+
     </VerticalStackLayout>
 </ContentPage>

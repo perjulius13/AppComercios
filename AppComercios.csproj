@@ -50,10 +50,10 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg"  Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#512BD4" />
 		
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#121110"  />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#121110" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -85,6 +85,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\HomeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Vistas\LoginView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\MapaView.xaml">

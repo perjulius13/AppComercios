@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AppComercios.Vistas;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AppComercios
 {
