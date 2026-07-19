@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
+
+
 
 namespace AppComercios
 {
@@ -10,6 +13,7 @@ namespace AppComercios
             builder
                 .UseMauiApp<App>()
                   .UseMauiMaps()
+                  .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -19,6 +23,10 @@ namespace AppComercios
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+
+
+
 
             return builder.Build();
         }
