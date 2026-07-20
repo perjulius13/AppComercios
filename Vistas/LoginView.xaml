@@ -36,7 +36,7 @@
                 Margin="30"
                 FontSize="18"
                 FontAttributes="Bold"
-                
+                Clicked="Button_Clicked"
                 CornerRadius="30"/>
 
 
