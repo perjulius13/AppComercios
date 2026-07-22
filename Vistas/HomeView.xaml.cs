@@ -38,7 +38,7 @@ public partial class HomeView : ContentPage
 
         //txtpendientes.Text = (pendientes == 0) ? "No hay pagos pendientes" : "Pendientes: " + pendientes; 
         txtnombre.Text = "Bienvenido ! " + nombre;
-        txtsaldo.Text = "Saldo: " + saldo; 
+        txtsaldo.Text =  saldo; 
     }
 
 

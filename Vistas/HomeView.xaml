@@ -10,9 +10,9 @@
         <mtc:StatusBarBehavior StatusBarColor="AliceBlue" StatusBarStyle="LightContent"/>
     </Page.Behaviors>
 
-    
-    
-    <VerticalStackLayout>
+
+
+    <VerticalStackLayout >
 
 
         <Label 
@@ -22,6 +22,11 @@
             FontSize="16"
             FontAttributes="Bold"
             Padding="10"/>
+
+        <Label
+            Text="Saldo disponible"
+            Margin="20,10,0,5"
+            />
 
 
         <Label 
