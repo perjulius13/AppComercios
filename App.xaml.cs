@@ -8,11 +8,20 @@ namespace AppComercios
         public App()
         {
             InitializeComponent();
+            
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
-        {            
-            return new Window(new LoginView());
+        {
+            if (Preferences.Get("iduser", 0) == 0)
+            {
+                return new Window(new LoginView());
+            }
+            else
+            {
+                return new Window(new AppShell());
+            }
+            
         }
 
 
