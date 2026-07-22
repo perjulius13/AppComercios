@@ -162,5 +162,34 @@ namespace AppComercios.Servicios
         }
 
 
+
+
+        public async Task<UsuariosClass> LoginApp(UsuariosClass user)
+        {
+            string url = "https://www.urbanitydata.com/api/Usuarios/LoginApp";
+
+            try
+            {
+                // Realiza el POST y serializa automáticamente a JSON
+                HttpResponseMessage response = await _cliente.PostAsJsonAsync<UsuariosClass>(url, user);
+
+                // Verifica si el código de estado es un 200-299
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<UsuariosClass>(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+            }
+
+            return new UsuariosClass(); 
+        }
+
+
+
+
     }
 }
