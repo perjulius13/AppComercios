@@ -11,7 +11,8 @@ namespace AppComercios
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginView()); 
+            App.Current.MainPage = new LoginView();
+
         }
 
 

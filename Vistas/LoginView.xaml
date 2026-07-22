@@ -21,7 +21,7 @@
             Margin="30"
             HorizontalTextAlignment="Center"
             TextTransform="Uppercase" 
-            FontAttributes="Bold"
+            FontAttributes="Bold"            
             Placeholder="Celular (10 digitos)"/>
 
 

@@ -27,9 +27,10 @@ public partial class LoginView : ContentPage
 
         var servicio = new ApiService();
         respuesta = await servicio.LoginApp(user); 
+
         if(respuesta.Telefono == tel && respuesta.Contra == contra)
         {
-            await DisplayAlertAsync("PEROTE", "Bienvenido " + user.Nombre, "Ok"); 
+            await DisplayAlertAsync("PEROTE", "Bienvenido " + respuesta.Nombre + " " + respuesta.Apellidos, "Ok"); 
             App.Current.MainPage = new AppShell();
         }
         else
