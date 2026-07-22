@@ -32,9 +32,15 @@
             IsPassword="true"
             HorizontalTextAlignment="Center"
             Placeholder="Contraseña"/>
+        
+        
+        <ActivityIndicator
+      x:Name="actividad"
+      />
 
-
-        <Button Text="Ingresar"
+        <Button 
+            x:Name="btningresar"
+            Text="Ingresar"
                 Margin="30"
                 FontSize="18"
                 FontAttributes="Bold"
@@ -42,7 +48,12 @@
                 CornerRadius="30"/>
 
 
-        <Button Text="Registrarse"
+      
+
+
+        <Button 
+            x:Name="btnregistrer"
+            Text="Registrarse"
         Margin="10"
         FontSize="18"        
                 BackgroundColor="White"

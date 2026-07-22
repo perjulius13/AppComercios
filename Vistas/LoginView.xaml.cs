@@ -18,6 +18,9 @@ public partial class LoginView : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
+        actividad.IsRunning = true;
+
+        btningresar.IsEnabled = false;  
 
         tel = txttelefono.Text;
         contra = txtcontra.Text;
@@ -30,6 +33,10 @@ public partial class LoginView : ContentPage
 
         if(respuesta.Telefono == tel && respuesta.Contra == contra)
         {
+            Preferences.Set("iduser", respuesta.Iduser);
+            Preferences.Set("saldouser", respuesta.Saldo);
+            Preferences.Set("nombreuser", respuesta.Nombre + " "  + respuesta.Apellidos);
+
             await DisplayAlertAsync("PEROTE", "Bienvenido " + respuesta.Nombre + " " + respuesta.Apellidos, "Ok"); 
             App.Current.MainPage = new AppShell();
         }
@@ -38,7 +45,10 @@ public partial class LoginView : ContentPage
             await DisplayAlertAsync("PEROTE", "Usuario o contraseña incorrectos", "Ok");
         }
 
-        
+
+
+        actividad.IsRunning = false;
+        btningresar.IsEnabled = true;
     }
 
 
