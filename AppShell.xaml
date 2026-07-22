@@ -20,8 +20,9 @@
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center" />
-                
-                                
+
+              
+
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>

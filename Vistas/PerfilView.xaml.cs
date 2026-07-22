@@ -14,13 +14,15 @@ public partial class PerfilView : ContentPage
 
 
 
-	UsuariosClass user = new UsuariosClass(); 
+	UsuariosClass user = new UsuariosClass();
 
+	int iduser = 0; 
 
     protected override async void OnAppearing()
 	{
+		iduser = Preferences.Get("iduser", 0); 
         var servicio = new ApiService();
-        var item = await servicio.GetDatosUser(1);
+        var item = await servicio.GetDatosUser(iduser);
 		user = item;
 
 		txtnombre.Text = "Nombre: " + user.Nombre;

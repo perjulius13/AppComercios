@@ -16,12 +16,18 @@
 
 
         <Label 
-            Text="Bienvenido! Andres Gonzalez "            
+            x:Name="txtnombre"
+            
             HorizontalOptions="Center"
             FontSize="16"
             FontAttributes="Bold"
             Padding="10"/>
 
+
+        <Label 
+            x:Name="txtsaldo"
+            Margin="20,10,0,5"
+               />
 
         <Label 
                 Text="Tianguis de Perote"
@@ -30,7 +36,7 @@
                />
 
         <Label 
-        Text="18/07/2026"
+        x:Name="txtfecha"
         HorizontalOptions="Start"
     Margin="20,10,0,5"
        />
