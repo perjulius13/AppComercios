@@ -2,72 +2,119 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.RegistrarComercio"
+             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
              Title="Registrar Comercio">
 
-    <VerticalStackLayout >
+    <ScrollView >
 
-        <Label 
+
+        <StackLayout >
+
+
+            <Label 
             Text="Llena los datos correctamente por favor"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
 
 
-        <VerticalStackLayout Margin="20">
+            <VerticalStackLayout Margin="20" Spacing="4">
 
-            <Label Text="Datos del comercio"
+                <Label Text="Datos del comercio"
                    Padding="10"/>
 
-            <Entry
+                <Entry
     x:Name="txtnombre"
     Placeholder="Nombre del Comercio"
     />
 
-            <Picker x:Name="cbcategoria"
+
+                <Picker x:Name="cbtipocomercio"
+Title="Selecciona el Tipo de Comercio">
+                </Picker>
+                
+                
+                <Picker x:Name="cbcategoria"
                     Title="Selecciona el Giro">
-            </Picker>
+                </Picker>
+
+            
 
 
-            <Entry 
+                <Entry 
                 x:Name="txtlicencia"
                 Placeholder="Licencia Mercantil"
                 />
 
-        </VerticalStackLayout>
+            </VerticalStackLayout>
 
 
-        <VerticalStackLayout Margin="20">
+            <VerticalStackLayout Margin="20" Spacing="4">
 
-            <Label Text="Datos del Propietario"
+                <Label Text="Datos del Propietario"
          Padding="10"/>
 
-            <Entry 
+                <Entry 
     x:Name="txtpropietarionombre"
     Placeholder="Nombre del Propietario"
     />
 
-            <Entry 
+                <Entry 
 x:Name="txttelefonoprop"
 Placeholder="Telefono del Propietario"
 />
 
-            <Entry 
+                <Entry 
 x:Name="txtemailprop"
 Placeholder="Email del Propietario"
 />
 
 
-        </VerticalStackLayout>
+            </VerticalStackLayout>
 
 
 
-        <VerticalStackLayout Margin="20">
+            <VerticalStackLayout Margin="20" Spacing="4">
+
+                <Label Text="Ubicacion"/>
+
+
+                <Entry
+                x:Name="txtlatitud"
+                    Placeholder="Latitud"
+                    IsReadOnly="True"
+                />
+
+                <Entry
+    x:Name="txtlongitud"
+                    Placeholder="Longitud"
+                    IsReadOnly="True"
+    />
+
+
+                <maps:Map x:Name="map" 
+             HeightRequest="300"
+             IsShowingUser="True"
+             
+             />
+
+            </VerticalStackLayout>
+
+
+            <Button 
+            Text="Registrar"
+            Clicked="Button_Clicked"
+                Margin="30"
+            />
+
             
-        </VerticalStackLayout>
- 
+            
+        </StackLayout>
+
+     
 
 
 
 
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

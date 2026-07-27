@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http.Json;
 using System.Text;
 
 namespace AppComercios.Servicios
@@ -11,6 +12,20 @@ namespace AppComercios.Servicios
 
         private readonly HttpClient _cliente = new HttpClient();
 
+
+
+
+        public async Task<List<TipoComercioClass>> ListarTipoComercio()
+        {
+            var response = await _cliente.GetAsync("https://www.urbanitydata.com/api/Comercios/ListarTipoComer");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<TipoComercioClass>>(json);
+            }
+
+            return new List<TipoComercioClass>();
+        }
 
         public async Task<List<ComerciosAuxClass>> ListarComercios()
         {
@@ -37,6 +52,26 @@ namespace AppComercios.Servicios
             return new List<CategoriaComerClass>();
         }
 
+
+        public async Task<bool> RegistrarComercio(ComerciosClass comer)
+        {
+            string url = "https://www.urbanitydata.com/api/Comercios/RegistrarComer";
+
+            try
+            {                
+                HttpResponseMessage response = await _cliente.PostAsJsonAsync<ComerciosClass>(url, comer);                
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+            }
+
+            return false;
+        }
 
 
     }
