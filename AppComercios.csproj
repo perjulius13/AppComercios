@@ -76,31 +76,49 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Vistas\Tianguis\HomeViewTianguis.xaml.cs">
+	    <DependentUpon>HomeViewTianguis.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Vistas\Tianguis\MapaViewTianguis.xaml.cs">
+	    <DependentUpon>MapaViewTianguis.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Vistas\AyudaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\CalendarioView.xaml">
+	  <MauiXaml Update="Vistas\HogarView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\HistorialPagView.xaml">
+	  <MauiXaml Update="Vistas\MapaComercios.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\HomeView.xaml">
+	  <MauiXaml Update="Vistas\RegistrarComercio.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Vistas\Tianguis\CalendarioView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Vistas\Tianguis\HistorialPagView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Vistas\Tianguis\HomeViewTianguis.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\LoginView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\MapaView.xaml">
+	  <MauiXaml Update="Vistas\Tianguis\MapaViewTianguis.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\MiPlazaView.xaml">
+	  <MauiXaml Update="Vistas\Tianguis\MiPlazaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\PerfilView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\RealizarPago.xaml">
+	  <MauiXaml Update="Vistas\Tianguis\RealizarPago.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

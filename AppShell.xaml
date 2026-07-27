@@ -15,7 +15,7 @@
                 Background="LightSlateGray"
                   HeightRequest="100">
                 
-                <Label Text="Mercadito Perote"
+                <Label Text="Comercios Perote"
                        TextColor="White"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
@@ -38,13 +38,13 @@
 
         <ShellContent
             Title="Home"
-            ContentTemplate="{DataTemplate vistas:HomeView}"
+            ContentTemplate="{DataTemplate vistas:HogarView}"
             Icon="hogar.png"
             />
 
         <ShellContent
             Title="Mapa"
-            ContentTemplate="{DataTemplate vistas:MapaView}"
+            ContentTemplate="{DataTemplate vistas:MapaComercios}"
             Icon="mapa.png"
             />
             
@@ -56,8 +56,8 @@
 
 
           <ShellContent
-            Title="Mi Plaza"
-            ContentTemplate="{DataTemplate vistas:MiPlazaView}"
+            Title="Registrar Comercio"
+            ContentTemplate="{DataTemplate vistas:RegistrarComercio}"
             Icon="plaza.png"
             />
 

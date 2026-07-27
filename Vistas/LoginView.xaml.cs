@@ -20,7 +20,10 @@ public partial class LoginView : ContentPage
     {
         actividad.IsRunning = true;
 
-        btningresar.IsEnabled = false;  
+        btningresar.IsEnabled = false;
+
+        txttelefono.Text = "2222398762";
+        txtcontra.Text = "123"; 
 
         tel = txttelefono.Text;
         contra = txtcontra.Text;
