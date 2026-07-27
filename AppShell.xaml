@@ -71,6 +71,13 @@
         Icon="profile.png"
         />
 
+
+    <ShellContent 
+        Title="Comercios"
+        ContentTemplate="{DataTemplate vistas:ListadoComercios}"
+        
+        />
+
     <ShellContent 
     Title="Ayuda"
     ContentTemplate="{DataTemplate vistas:AyudaView}"

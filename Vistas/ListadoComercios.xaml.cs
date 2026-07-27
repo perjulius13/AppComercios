@@ -1,3 +1,6 @@
+using AppComercios.Modelos;
+using AppComercios.Servicios;
+
 namespace AppComercios.Vistas;
 
 public partial class ListadoComercios : ContentPage
@@ -6,4 +9,29 @@ public partial class ListadoComercios : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+	List<ComerciosAuxClass> lista = new List<ComerciosAuxClass>();
+
+
+
+    protected override async void OnAppearing()
+	{
+		actividad.IsEnabled = true;
+
+
+        var servicio = new ServiciosComercio();
+        lista = await servicio.ListarComercios();
+
+		foreach (var item in lista)
+		{
+            item.EstatusPag = item.Pagado ? "Pagado" : "Pago Pendiente";
+        }
+
+		lstcalendario.ItemsSource = lista; 
+
+
+        actividad.IsEnabled = false; 
+	}
+
 }
