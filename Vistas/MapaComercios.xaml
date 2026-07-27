@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.MapaComercios"
              xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
-             Title="MapaComercios">
-    <VerticalStackLayout>
+             Title="Mapa de Comercios">
+    
+    <VerticalStackLayout Margin="20">
         
         <Label 
             x:Name="txttotal"
@@ -14,7 +15,7 @@
 
 
         <maps:Map x:Name="map" 
-               HeightRequest="500"
+               HeightRequest="600"
                IsShowingUser="True"
                
                />

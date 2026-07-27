@@ -25,6 +25,19 @@ namespace AppComercios.Servicios
         }
 
 
+        public async Task<List<CategoriaComerClass>> ListarCategorias()
+        {
+            var response = await _cliente.GetAsync("https://www.urbanitydata.com/api/Categorias/ListarCategorias");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<CategoriaComerClass>>(json);
+            }
+
+            return new List<CategoriaComerClass>();
+        }
+
+
 
     }
 }
