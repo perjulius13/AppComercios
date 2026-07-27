@@ -91,6 +91,9 @@
 	  <MauiXaml Update="Vistas\HogarView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vistas\ListadoComercios.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\MapaComercios.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

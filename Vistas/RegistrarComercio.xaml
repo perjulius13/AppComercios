@@ -17,6 +17,8 @@
             HorizontalOptions="Center" />
 
 
+            <ActivityIndicator x:Name="actividad"/>
+
 
             <VerticalStackLayout Margin="20" Spacing="4">
 
@@ -24,26 +26,28 @@
                    Padding="10"/>
 
                 <Entry
-    x:Name="txtnombre"
-    Placeholder="Nombre del Comercio"
+                    x:Name="txtnombre"
+                    Placeholder="Nombre del Comercio"
+                    TextTransform="Uppercase"
     />
 
 
                 <Picker x:Name="cbtipocomercio"
-Title="Selecciona el Tipo de Comercio">
+                Title="Selecciona el Tipo de Comercio">
                 </Picker>
-                
-                
+
+
                 <Picker x:Name="cbcategoria"
                     Title="Selecciona el Giro">
                 </Picker>
 
-            
+
 
 
                 <Entry 
                 x:Name="txtlicencia"
                 Placeholder="Licencia Mercantil"
+                    TextTransform="Uppercase"
                 />
 
             </VerticalStackLayout>
@@ -57,16 +61,20 @@ Title="Selecciona el Tipo de Comercio">
                 <Entry 
     x:Name="txtpropietarionombre"
     Placeholder="Nombre del Propietario"
+                    TextTransform="Uppercase"
     />
 
                 <Entry 
 x:Name="txttelefonoprop"
 Placeholder="Telefono del Propietario"
+                    Keyboard="Telephone"
 />
 
                 <Entry 
 x:Name="txtemailprop"
 Placeholder="Email del Propietario"
+                    TextTransform="Uppercase"
+                    Keyboard="Email"
 />
 
 
@@ -82,13 +90,13 @@ Placeholder="Email del Propietario"
                 <Entry
                 x:Name="txtlatitud"
                     Placeholder="Latitud"
-                    IsReadOnly="True"
+                    IsEnabled="True"
                 />
 
                 <Entry
     x:Name="txtlongitud"
                     Placeholder="Longitud"
-                    IsReadOnly="True"
+                    IsEnabled="True"
     />
 
 
@@ -98,20 +106,27 @@ Placeholder="Email del Propietario"
              
              />
 
+                <Entry
+                    x:Name="txtobservaciones"
+                    Placeholder="Observaciones "
+                    TextTransform="Uppercase"
+                    />
+
             </VerticalStackLayout>
 
 
             <Button 
+                x:Name="btnRegistrar"
             Text="Registrar"
             Clicked="Button_Clicked"
                 Margin="30"
             />
 
-            
-            
+
+
         </StackLayout>
 
-     
+
 
 
 

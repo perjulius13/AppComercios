@@ -10,11 +10,10 @@ public partial class RegistrarComercio : ContentPage
 	public RegistrarComercio()
 	{
 		InitializeComponent();
-        map.MoveToRegion(MapSpan.FromCenterAndRadius(pueblacenter, Distance.FromKilometers(0.2)));
+        //map.MoveToRegion(MapSpan.FromCenterAndRadius(pueblacenter, Distance.FromKilometers(0.2)));
     }
 
-    private static readonly Location PeroteCenter = new(19.56188, -97.24406);
-    Location pueblacenter = new Location(19.0851559, -98.2080411); 
+
 
     List<CategoriaComerClass> lista = new List<CategoriaComerClass>();
     List<TipoComercioClass> listatipocomer = new List<TipoComercioClass>();
@@ -23,7 +22,11 @@ public partial class RegistrarComercio : ContentPage
 
     protected override async void OnAppearing()
 	{
-		var servicio = new ServiciosComercio();
+        actividad.IsRunning = true; 
+
+        getLocation();
+
+        var servicio = new ServiciosComercio();
 		lista = await servicio.ListarCategorias();
         listatipocomer = await servicio.ListarTipoComercio();
 
@@ -37,7 +40,7 @@ public partial class RegistrarComercio : ContentPage
 			cbcategoria.Items.Add(item.Categoria); 
 		}
 
-        getLocation(); 
+        actividad.IsRunning= false;
     }
 
 
@@ -46,16 +49,26 @@ public partial class RegistrarComercio : ContentPage
 
 	public async void getLocation ()
 	{
-        Location location = await Geolocation.Default.GetLastKnownLocationAsync();
+        //Location location = await Geolocation.Default.GetLastKnownLocationAsync();
+
+        var request = new GeolocationRequest(GeolocationAccuracy.Best, TimeSpan.FromSeconds(10));
+        using var cts = new CancellationTokenSource();
+        Location location = await Geolocation.Default.GetLocationAsync(request, cts.Token);
+        
 
         if (location != null)
         { 
             txtlatitud.Text = location.Latitude.ToString();
             txtlongitud.Text = location.Longitude.ToString();
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.3)));
             addmarker(location.Latitude, location.Longitude, "Ubicacion predeterminada"); 
         }
 
-            //return $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}";
+
+        
+
+        
+
     }
 
 
@@ -78,15 +91,29 @@ public partial class RegistrarComercio : ContentPage
     private async void Button_Clicked(object sender, EventArgs e)
     {
         //registrar comercio 
+        btnRegistrar.IsEnabled = false;
 
         comer.Nombre = txtnombre.Text;
         comer.IdCategoria = cbcategoria.SelectedIndex;
-        comer.IdTipoComercio = 0;
+        comer.IdTipoComercio = cbtipocomercio.SelectedIndex;
         comer.Latitud = Convert.ToDouble(txtlatitud.Text);
-
+        comer.Longitud = Convert.ToDouble(txtlongitud.Text); 
+        comer.Observaciones = txtobservaciones.Text;
+        comer.LicenciaMercantil = txtlicencia.Text;
+        comer.Propietario = txtpropietarionombre.Text;
+        comer.TelPropietario = txttelefonoprop.Text;
+        comer.EmailPropietario = txtemailprop.Text;
+        comer.Habilitado = true;
+        comer.IdUsuarioReg = Preferences.Get("iduser", 0); 
+        comer.Usuarioreg = Preferences.Get("nombreuser", "");
 
         var servicio = new ServiciosComercio();
         await servicio.RegistrarComercio(comer);
+
+        comer = new ComerciosClass(); 
+
+        App.Current.MainPage = new AppShell();
+
     }
 
 }

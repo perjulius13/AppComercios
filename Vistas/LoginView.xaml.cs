@@ -39,6 +39,7 @@ public partial class LoginView : ContentPage
             Preferences.Set("iduser", respuesta.Iduser);
             Preferences.Set("saldouser", respuesta.Saldo);
             Preferences.Set("nombreuser", respuesta.Nombre + " "  + respuesta.Apellidos);
+            
 
             await DisplayAlertAsync("PEROTE", "Bienvenido " + respuesta.Nombre + " " + respuesta.Apellidos, "Ok"); 
             App.Current.MainPage = new AppShell();
