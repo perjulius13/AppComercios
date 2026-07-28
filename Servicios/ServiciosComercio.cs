@@ -13,7 +13,7 @@ namespace AppComercios.Servicios
         private readonly HttpClient _cliente = new HttpClient();
 
 
-
+        
 
         public async Task<List<TipoComercioClass>> ListarTipoComercio()
         {
@@ -122,6 +122,31 @@ namespace AppComercios.Servicios
             return false;
         }
 
+
+        public async Task<List<VisitComerAuxClass>> ListarVisitasComercio(int iduser)
+        {
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Comercios/ListarVisitasComer?iduser={iduser}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<VisitComerAuxClass>>(json);
+            }
+
+            return new List<VisitComerAuxClass>();
+        }
+
+
+        public async Task<int> GetTotalComercios()
+        {
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Reportes/GetTotalComercios");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<int>(json);
+            }
+
+            return new int();
+        }
 
 
     }

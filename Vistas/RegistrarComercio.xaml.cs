@@ -52,12 +52,10 @@ public partial class RegistrarComercio : ContentPage
 
     public async void getLocation()
     {
-        //Location location = await Geolocation.Default.GetLastKnownLocationAsync();
-
+        
         var request = new GeolocationRequest(GeolocationAccuracy.Best, TimeSpan.FromSeconds(10));
         using var cts = new CancellationTokenSource();
         Location location = await Geolocation.Default.GetLocationAsync(request, cts.Token);
-
 
         if (location != null)
         {

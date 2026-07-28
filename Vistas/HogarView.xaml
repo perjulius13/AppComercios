@@ -63,16 +63,16 @@
             Margin="10"
             />
 
-                <Label
-Text="Visitas"
-HorizontalOptions="Center"
-/>
+                <Label                    
+                    Text="Visitas"
+                    HorizontalOptions="Center"
+                    />
 
                 <Label
- Text="12"
-HorizontalOptions="Center"
-            FontAttributes="Bold"
-        />
+                     x:Name="txtvistias"
+                    HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                            />
             </VerticalStackLayout>
 
 
@@ -95,7 +95,7 @@ HorizontalOptions="Center"
 />
 
                 <Label
- Text="125"
+ x:Name="txttotalcomers"
 HorizontalOptions="Center"
             FontAttributes="Bold"
         />
