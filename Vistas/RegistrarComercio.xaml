@@ -86,6 +86,11 @@ Placeholder="Email del Propietario"
                 <Label Text="Ubicacion"/>
 
 
+
+                <Picker x:Name="cbzona"
+     Title="Selecciona la zona">
+                </Picker>
+
                 <Entry
                 x:Name="txtlatitud"
                     Placeholder="Latitud"

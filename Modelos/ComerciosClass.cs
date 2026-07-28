@@ -60,6 +60,7 @@ namespace AppComercios.Modelos
 
         public bool Habilitado { get; set; }
         public bool Pagado { get; set; }
+        public int Zona { get; set; }
 
 
     }
