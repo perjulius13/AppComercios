@@ -13,7 +13,7 @@
         <CollectionView
       ItemsLayout="VerticalList"
       x:Name="lstcalendario"
-      
+      SelectionChanged="OnCollectionViewSelectionChanged"
      SelectionMode="Single"
       >
             <CollectionView.ItemTemplate>

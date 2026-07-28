@@ -88,6 +88,9 @@
 	  <MauiXaml Update="Vistas\AyudaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vistas\CobrarComercio.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\HogarView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

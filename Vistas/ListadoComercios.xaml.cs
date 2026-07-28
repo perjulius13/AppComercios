@@ -13,7 +13,8 @@ public partial class ListadoComercios : ContentPage
 
 	List<ComerciosAuxClass> lista = new List<ComerciosAuxClass>();
 
-
+    int idcomercio = 0;
+    int idcategoria = 0; 
 
     protected override async void OnAppearing()
 	{
@@ -33,5 +34,15 @@ public partial class ListadoComercios : ContentPage
 
         actividad.IsEnabled = false; 
 	}
+
+
+
+    public async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        idcomercio = (int)(e.CurrentSelection.FirstOrDefault() as ComerciosAuxClass)?.IdComer;
+        idcategoria = (int)(e.CurrentSelection.FirstOrDefault() as ComerciosAuxClass)?.IdCategoria;
+        await Navigation.PushAsync(new CobrarComercio(idcomercio, idcategoria));
+    }
+
 
 }

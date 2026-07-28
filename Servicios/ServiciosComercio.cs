@@ -74,5 +74,34 @@ namespace AppComercios.Servicios
         }
 
 
+
+        public async Task<CategoriaComerClass> GetCategoriaById(int idcat)
+        {
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Categorias/GetCategoriaById?idcat={idcat}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<CategoriaComerClass>(json);
+            }
+
+            return new CategoriaComerClass();
+        }
+
+
+        public async Task<ComerciosClass> GetComercioById(int idcomer)
+        {
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/api/Comercios/GetComerById?={idcomer}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ComerciosClass>(json);
+            }
+
+            return new ComerciosClass();
+        }
+
+
+
+
     }
 }
