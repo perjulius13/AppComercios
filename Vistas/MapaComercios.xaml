@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.MapaComercios"
-             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+             xmlns:ctrl="clr-namespace:AppComercios.Vistas.Componentes"
              Title="Mapa de Comercios">
     
     <VerticalStackLayout Margin="20">
@@ -14,12 +14,13 @@
 
 
 
-        <maps:Map x:Name="map" 
+        <ctrl:MapEx 
+            x:Name="map" 
                HeightRequest="600"
-               IsShowingUser="True"
-               
+               IsShowingUser="True"               
                />
 
+        
 
     </VerticalStackLayout>
 </ContentPage>

@@ -18,7 +18,17 @@ namespace AppComercios
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                })
+                .ConfigureMauiHandlers(handlers =>
+                {
+#if ANDROID
+                    handlers.AddHandler<Microsoft.Maui.Controls.Maps.Map, AppComercios.Platforms.Android.CustomMapHandler>();
+#elif IOS
+            handlers.AddHandler<Microsoft.Maui.Controls.Maps.Map, AppComercios.Platforms.iOS.CustomMapHandler>();
+#endif
                 });
+                
+
 
 #if DEBUG
     		builder.Logging.AddDebug();
