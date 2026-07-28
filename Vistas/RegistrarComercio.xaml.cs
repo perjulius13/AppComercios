@@ -74,14 +74,19 @@ public partial class RegistrarComercio : ContentPage
         map.Pins.Add(marker);
     }
 
+    string select = "";
     private async void Button_Clicked(object sender, EventArgs e)
     {
         //registrar comercio 
         btnRegistrar.IsEnabled = false;
 
         comer.Nombre = txtnombre.Text;
-        comer.IdCategoria = cbcategoria.SelectedIndex;
-        comer.IdTipoComercio = Convert.ToInt32(cbtipocomercio.SelectedItem);
+
+        select = cbcategoria.SelectedItem.ToString();
+        comer.IdCategoria = lista.Where(e => e.Categoria == select).FirstOrDefault().IdCat; 
+        select = cbtipocomercio.SelectedItem.ToString();
+        comer.IdTipoComercio = listatipocomer.Where(e => e.Tipo == select).FirstOrDefault().IdTipoComer; 
+
         comer.Latitud = Convert.ToDouble(txtlatitud.Text);
         comer.Longitud = Convert.ToDouble(txtlongitud.Text); 
         comer.Observaciones = txtobservaciones.Text;

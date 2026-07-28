@@ -67,14 +67,13 @@
                 <Entry 
 x:Name="txttelefonoprop"
 Placeholder="Telefono del Propietario"
-                    Keyboard="Telephone"
+                   Keyboard="Telephone"
 />
 
                 <Entry 
 x:Name="txtemailprop"
 Placeholder="Email del Propietario"
                     TextTransform="Uppercase"
-                    Keyboard="Email"
 />
 
 

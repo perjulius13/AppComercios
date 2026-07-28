@@ -24,10 +24,7 @@ public partial class ListadoComercios : ContentPage
         var servicio = new ServiciosComercio();
         lista = await servicio.ListarComercios();
 
-		
-
-		lstcalendario.ItemsSource = lista; 
-
+		lstcalendario.ItemsSource = lista.Where(e=> e.Pagado == false); 
 
         actividad.IsEnabled = false; 
 	}
