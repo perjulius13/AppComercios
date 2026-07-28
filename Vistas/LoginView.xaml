@@ -7,7 +7,7 @@
 
 
 
-        <Image Source="mercadito.png"
+        <Image Source="comerbanner.png"
                WidthRequest="200"
                Margin="0,0,0,30"/>
 
