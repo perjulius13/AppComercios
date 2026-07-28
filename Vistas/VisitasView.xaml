@@ -3,13 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.VisitasView"
              Title="Tus visitas pendientes">
-    <VerticalStackLayout>
-        
-        
-        
-        
-        
-        
-        
+    
+    <VerticalStackLayout Margin="20">
+
+
+        <ActivityIndicator x:Name="actividad"/>
+
+
+        <CollectionView
+ ItemsLayout="VerticalList"
+ x:Name="lstcomercios"
+ 
+SelectionMode="Single"
+ >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10"
+                 Margin="10"                            
+                 >
+
+                        <VerticalStackLayout>
+
+
+                            <Label Text="{Binding Idcomercio, StringFormat='ID: {0}' }"/>
+                            
+                            <Label Text="{Binding NombreComer, StringFormat='Comercio: {0}' }"/>
+
+                            <Label Text="{Binding  Atendida}"/>
+                            
+
+                        </VerticalStackLayout>
+
+
+
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+
     </VerticalStackLayout>
 </ContentPage>
