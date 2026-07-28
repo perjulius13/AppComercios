@@ -45,9 +45,7 @@
     x:Name="txtHabilitado"
     Text="Estatus:"/>
 
-            <Label 
-                Padding="10"                
-                Text="Tipo de puesto: SIN LUGAR ASIGNADO"/>
+            
 
 
             <Label 

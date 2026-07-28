@@ -65,8 +65,9 @@ public partial class MapaComercios : ContentPage
 
         map.CustomPins = Pins;
 
-        txttotal.Text = "Total de comercios " + lista.Count; 
+        txttotal.Text = "Total de comercios " + lista.Count;
 
+        txttotalpendientes.Text = "Pendientes de pago: " + lista.Where(a => a.Pagado == false).Count(); 
 
     }
 

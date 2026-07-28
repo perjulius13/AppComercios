@@ -15,7 +15,7 @@ namespace AppComercios.Platforms.Android
     public class CustomMapHandler : MapHandler
     {
 
-        private const int _iconSize = 60;
+        private const int _iconSize = 90;
 
         private readonly Dictionary<string, BitmapDescriptor> _iconMap = [];
 

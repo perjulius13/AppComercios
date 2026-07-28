@@ -10,13 +10,21 @@
         <Label 
             x:Name="txttotal"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+            Padding="10"/>
+
+
+        <Label 
+    x:Name="txttotalpendientes"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" 
+            Padding="10"/>
 
 
 
         <ctrl:MapEx 
             x:Name="map" 
-               HeightRequest="600"
+               HeightRequest="500"
                IsShowingUser="True"               
                />
 
