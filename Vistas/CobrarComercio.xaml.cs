@@ -15,14 +15,12 @@ public partial class CobrarComercio : ContentPage
 		InitializeComponent();
 	}
 
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-
-    }
 
 
     CategoriaComerClass cate = new CategoriaComerClass();
-    ComerciosClass comer = new ComerciosClass(); 
+    ComerciosClass comer = new ComerciosClass();
+    PagosClass pag = new PagosClass(); 
+    double total = 0; 
 
     protected override async void OnAppearing()
     {
@@ -36,15 +34,49 @@ public partial class CobrarComercio : ContentPage
             cbyears.Items.Add(i.ToString());
         }
 
-        txtnombrecomer.Text = "Comercio: " + comer.Nombre; 
+        cbyears.SelectedIndex = 0; 
+
+        txtnombrecomer.Text = comer.Nombre; 
 
         txtcostolic.Text = cate.CostoLicencia.ToString();
-        txtidcomer.Text = "ID del comercio " + comer.IdComer.ToString();
+        txtidcomer.Text = idcomercio.ToString();
 
         txttotal.Text = cate.CostoLicencia.ToString(); 
 
     }
 
+
+
+    private void PickerCiudades_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+
+        if (picker.SelectedIndex == -1)
+            return;
+
+        string valor = picker.SelectedItem. ToString();
+
+        total = Convert.ToDouble(valor) * cate.CostoLicencia;
+        pag.Total = total; 
+        txttotal.Text = total.ToString();   
+
+    
+    }
+
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
+        //cobrar comercio 
+        var servicio = new ServiciosComercio();
+
+        pag.IdComercio = idcomercio;
+        pag.IdUserReg = Preferences.Get("iduser", 0);
+        pag.Cantidad = Convert.ToInt32(cbyears.SelectedItem);
+        pag.Importe = cate.CostoLicencia;
+        
+
+        await servicio.CobrarComercio(pag);
+        App.Current.MainPage = new AppShell();
+    }
 
 
 }

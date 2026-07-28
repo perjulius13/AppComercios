@@ -4,7 +4,7 @@
              x:Class="AppComercios.Vistas.CobrarComercio"
              Title="Cobrar de Licencia de Funcionamiento">
     
-    <VerticalStackLayout Margin="20">
+    <VerticalStackLayout Margin="30" Spacing="12">
         
         <Label 
             Text="Llena los datos correctamente"
@@ -12,23 +12,39 @@
             HorizontalOptions="Center" />
 
 
+
+        <Label Text="Id del comercio"/>
+
         <Entry 
             x:Name="txtidcomer"
+            IsEnabled="False"
             />
+
+
+        <Label Text="Nombre del Comercio"/>
 
         <Entry 
     x:Name="txtnombrecomer"
+            IsEnabled="False"
     />
 
-        <Picker x:Name="cbyears">
+        <Label Text="Años de adeudo"/>
+
+        <Picker x:Name="cbyears"
+                  SelectedIndexChanged="PickerCiudades_SelectedIndexChanged"
+                >
             
         </Picker>
 
-
+        <Label Text="Costo de la Licencia"/>
+        
         <Entry 
             x:Name="txtcostolic"
+            IsEnabled="False"
             />
 
+
+        <Label Text="Total"/>
 
         <Entry
             x:Name="txttotal"

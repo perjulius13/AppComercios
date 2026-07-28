@@ -28,7 +28,7 @@
 
                             <Label Text="{Binding Categoriatxt, StringFormat='Categoria: {0}' }"/>
 
-                            <Label Text="{Binding EstatusPag}"/>
+                            <Label Text="{Binding TipoComerciotxt}"/>
 
 
 

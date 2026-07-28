@@ -11,7 +11,7 @@ namespace AppComercios.Modelos
         public string Subcategoriatxt { get; set; } = string.Empty;
         public string TipoComerciotxt { get; set; } = string.Empty;
 
-        public string EstatusPag { get; set; } = string.Empty;
+        
 
 
     }

@@ -24,10 +24,7 @@ public partial class ListadoComercios : ContentPage
         var servicio = new ServiciosComercio();
         lista = await servicio.ListarComercios();
 
-		foreach (var item in lista)
-		{
-            item.EstatusPag = item.Pagado ? "Pagado" : "Pago Pendiente";
-        }
+		
 
 		lstcalendario.ItemsSource = lista; 
 

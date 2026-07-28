@@ -9,8 +9,7 @@ public partial class RegistrarComercio : ContentPage
 {
 	public RegistrarComercio()
 	{
-		InitializeComponent();
-        //map.MoveToRegion(MapSpan.FromCenterAndRadius(pueblacenter, Distance.FromKilometers(0.2)));
+		InitializeComponent();        
     }
 
 
@@ -43,10 +42,6 @@ public partial class RegistrarComercio : ContentPage
         actividad.IsRunning= false;
     }
 
-
-
-
-
 	public async void getLocation ()
 	{
         //Location location = await Geolocation.Default.GetLastKnownLocationAsync();
@@ -64,16 +59,7 @@ public partial class RegistrarComercio : ContentPage
             addmarker(location.Latitude, location.Longitude, "Ubicacion predeterminada"); 
         }
 
-
-        
-
-        
-
     }
-
-
-
-
 
 
     public void addmarker(double lat, double longi, string titulo)
@@ -95,7 +81,7 @@ public partial class RegistrarComercio : ContentPage
 
         comer.Nombre = txtnombre.Text;
         comer.IdCategoria = cbcategoria.SelectedIndex;
-        comer.IdTipoComercio = cbtipocomercio.SelectedIndex;
+        comer.IdTipoComercio = Convert.ToInt32(cbtipocomercio.SelectedItem);
         comer.Latitud = Convert.ToDouble(txtlatitud.Text);
         comer.Longitud = Convert.ToDouble(txtlongitud.Text); 
         comer.Observaciones = txtobservaciones.Text;

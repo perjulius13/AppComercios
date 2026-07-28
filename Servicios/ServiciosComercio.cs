@@ -88,18 +88,39 @@ namespace AppComercios.Servicios
         }
 
 
-        public async Task<ComerciosClass> GetComercioById(int idcomer)
+        public async Task<ComerciosAuxClass> GetComercioById(int idcomer)
         {
-            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/api/Comercios/GetComerById?={idcomer}");
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Comercios/GetComerById?id={idcomer}");
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<ComerciosClass>(json);
+                return JsonConvert.DeserializeObject<ComerciosAuxClass>(json);
             }
 
-            return new ComerciosClass();
+            return new ComerciosAuxClass();
         }
 
+
+
+        public async Task<bool> CobrarComercio(PagosClass pago)
+        {
+            string url = "https://www.urbanitydata.com/api/Pagos/RegistrarPagoLicencia";
+
+            try
+            {
+                HttpResponseMessage response = await _cliente.PostAsJsonAsync<PagosClass>(url, pago);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+            }
+
+            return false;
+        }
 
 
 
