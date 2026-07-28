@@ -6,4 +6,14 @@ public partial class HogarView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+
+
+
+    protected override void OnAppearing()
+    {
+        txtnombre.Text = "Bienvendido ! "+ Preferences.Get("nombreuser", ""); 
+    }
+
 }

@@ -75,7 +75,7 @@
     <ShellContent 
         Title="Comercios"
         ContentTemplate="{DataTemplate vistas:ListadoComercios}"
-        
+        Icon="tienda.png"
         />
 
     <ShellContent 
