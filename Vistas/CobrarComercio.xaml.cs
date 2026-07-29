@@ -7,15 +7,17 @@ public partial class CobrarComercio : ContentPage
 {
 
     int idcomercio = 0; 
-    int idcategoria = 0; 
-	public CobrarComercio(int idcomer, int idcat)
+    int idcategoria = 0;
+    int idvisita = 0; 
+	public CobrarComercio(int idcomer, int idcat, int idvisit)
 	{
         idcomercio = idcomer; 
         idcategoria = idcat; 
+        idvisita = idvisit;
 		InitializeComponent();
 	}
 
-
+    VisitasComercioclass visita = new VisitasComercioclass(); 
 
     CategoriaComerClass cate = new CategoriaComerClass();
     ComerciosClass comer = new ComerciosClass();
@@ -72,9 +74,17 @@ public partial class CobrarComercio : ContentPage
         pag.IdUserReg = Preferences.Get("iduser", 0);
         pag.Cantidad = Convert.ToInt32(cbyears.SelectedItem);
         pag.Importe = cate.CostoLicencia;
+
+
+        visita.Id = idvisita;
+        visita.Atendida = true;
+        visita.Observaciones = ""; 
         
 
         await servicio.CobrarComercio(pag);
+        await servicio.ActualizarVisita(visita); 
+
+
         App.Current.MainPage = new AppShell();
     }
 

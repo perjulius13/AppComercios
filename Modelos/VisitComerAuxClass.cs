@@ -8,6 +8,9 @@ namespace AppComercios.Modelos
     {
         public string NombreComer { set; get; } = string.Empty;
         public string NombreUser { set; get; } = string.Empty;
+        public int Zona { set; get; }
+        public int IDcategoria { set; get; }
+
     }
 
 

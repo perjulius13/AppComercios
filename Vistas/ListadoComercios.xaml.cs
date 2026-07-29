@@ -35,7 +35,7 @@ public partial class ListadoComercios : ContentPage
     {
         idcomercio = (int)(e.CurrentSelection.FirstOrDefault() as ComerciosAuxClass)?.IdComer;
         idcategoria = (int)(e.CurrentSelection.FirstOrDefault() as ComerciosAuxClass)?.IdCategoria;
-        await Navigation.PushAsync(new CobrarComercio(idcomercio, idcategoria));
+        //await Navigation.PushAsync(new CobrarComercio(idcomercio, idcategoria));
     }
 
 

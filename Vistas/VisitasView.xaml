@@ -13,7 +13,7 @@
         <CollectionView
  ItemsLayout="VerticalList"
  x:Name="lstcomercios"
- 
+ SelectionChanged="lstcomercios_SelectionChanged"
 SelectionMode="Single"
  >
             <CollectionView.ItemTemplate>
@@ -29,7 +29,7 @@ SelectionMode="Single"
                             
                             <Label Text="{Binding NombreComer, StringFormat='Comercio: {0}' }"/>
 
-                            <Label Text="{Binding  Atendida}"/>
+                            <Label Text="{Binding  Zona, StringFormat='Zona: {0}'}"/>
                             
 
                         </VerticalStackLayout>

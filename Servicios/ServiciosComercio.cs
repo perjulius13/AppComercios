@@ -148,6 +148,28 @@ namespace AppComercios.Servicios
             return new int();
         }
 
+        
+
+        public async Task<bool> ActualizarVisita (VisitasComercioclass visita)
+        {
+            string url = "https://www.urbanitydata.com/api/Comercios/ActualizarVisita";
+
+            try
+            {
+                HttpResponseMessage response = await _cliente.PostAsJsonAsync<VisitasComercioclass>(url, visita);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+            }
+
+            return false;
+        }
+
 
     }
 }

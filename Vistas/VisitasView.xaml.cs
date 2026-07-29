@@ -11,6 +11,9 @@ public partial class VisitasView : ContentPage
 	}
 
 
+    int idcomercio = 0;
+    int idcategoria = 0;
+    int idvisita = 0; 
 
 
     List<VisitComerAuxClass> lista = new List<VisitComerAuxClass>();
@@ -27,6 +30,19 @@ public partial class VisitasView : ContentPage
         lstcomercios.ItemsSource = lista; 
         actividad.IsRunning = false; 
     }
+
+    private async void lstcomercios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        idcomercio = (int)(e.CurrentSelection.FirstOrDefault() as VisitComerAuxClass)?.Idcomercio;
+        idcategoria = (int)(e.CurrentSelection.FirstOrDefault() as VisitComerAuxClass)?.IDcategoria;
+        idvisita = (int)(e.CurrentSelection.FirstOrDefault() as VisitComerAuxClass)?.Id;
+
+        await Navigation.PushAsync(new CobrarComercio(idcomercio, idcategoria, idvisita));
+    }
+
+
+
+
 
 
 }
