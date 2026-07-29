@@ -61,6 +61,13 @@ namespace AppComercios.Modelos
         public bool Habilitado { get; set; }
         public bool Pagado { get; set; }
         public int Zona { get; set; }
+        public string? Calle { get; set; }
+
+        public string? Colonia { get; set; }
+
+        public int? Cp { get; set; }
+
+        public string? NumeroDir { get; set; }
 
 
     }

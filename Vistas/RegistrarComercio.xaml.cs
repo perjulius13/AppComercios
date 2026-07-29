@@ -63,8 +63,35 @@ public partial class RegistrarComercio : ContentPage
             txtlongitud.Text = location.Longitude.ToString();
             map.MoveToRegion(MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.3)));
             addmarker(location.Latitude, location.Longitude, "Ubicacion predeterminada");
+
+            GetAddressFromLocation(location.Latitude, location.Longitude); 
+
+            await DisplayAlertAsync("Direccion", direccion, "Ok");
         }
 
+    }
+
+    string mensaje = ""; 
+    string direccion = ""; 
+    public async void GetAddressFromLocation(double latitude, double longitude)
+    {        
+            IEnumerable<Placemark> placemarks = await Geocoding.Default.GetPlacemarksAsync(latitude, longitude);
+            Placemark placemark = placemarks?.FirstOrDefault();
+
+            if (placemark != null)
+            {
+                // 2. Format and return the address string
+                direccion =  $"{placemark.Thoroughfare} {placemark.SubThoroughfare}, " +
+                       $"{placemark.Locality}, {placemark.AdminArea} {placemark.PostalCode}, " +
+                       $"{placemark.CountryName}";
+
+            comer.Calle = placemark.Thoroughfare;
+            comer.Cp = Convert.ToInt32(placemark.PostalCode) ;
+            comer.Colonia = placemark.SubLocality;
+            comer.NumeroDir = placemark.SubThoroughfare; 
+
+                
+            }        
     }
 
 
@@ -103,7 +130,8 @@ public partial class RegistrarComercio : ContentPage
         comer.Habilitado = true;
         comer.IdUsuarioReg = Preferences.Get("iduser", 0);
         comer.Usuarioreg = Preferences.Get("nombreuser", "");
-        comer.Zona = Convert.ToInt32(cbzona.SelectedItem); 
+        comer.Zona = Convert.ToInt32(cbzona.SelectedItem);
+        comer.IdSubcategoria = 1; 
 
         var servicio = new ServiciosComercio();
         await servicio.RegistrarComercio(comer);
