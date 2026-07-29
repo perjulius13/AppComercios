@@ -1,5 +1,8 @@
+using Android.Gms.Maps.Model;
 using AppComercios.Modelos;
 using AppComercios.Servicios;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 
 namespace AppComercios.Vistas;
 
@@ -18,11 +21,11 @@ public partial class CobrarComercio : ContentPage
 	}
 
     VisitasComercioclass visita = new VisitasComercioclass(); 
-
     CategoriaComerClass cate = new CategoriaComerClass();
     ComerciosClass comer = new ComerciosClass();
     PagosClass pag = new PagosClass(); 
-    double total = 0; 
+    double total = 0;
+    Pin marker = new Pin();
 
     protected override async void OnAppearing()
     {
@@ -43,8 +46,13 @@ public partial class CobrarComercio : ContentPage
         txtcostolic.Text = cate.CostoLicencia.ToString();
         txtidcomer.Text = idcomercio.ToString();
 
-        txttotal.Text = cate.CostoLicencia.ToString(); 
+        txttotal.Text = cate.CostoLicencia.ToString();
 
+        Location location = new Location(comer.Latitud, comer.Longitud); 
+
+        map.MoveToRegion(MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(0.3)));
+
+        addmarker(comer.Latitud, comer.Longitud, "Comercio " + comer.IdComer); 
     }
 
 
@@ -86,6 +94,19 @@ public partial class CobrarComercio : ContentPage
 
 
         App.Current.MainPage = new AppShell();
+    }
+
+
+    public void addmarker(double lat, double longi, string titulo)
+    {
+        marker = new Pin
+        {
+            Label = titulo,
+            Type = PinType.Place,
+            Location = new Location(lat, longi),
+        };
+
+        map.Pins.Add(marker);
     }
 
 

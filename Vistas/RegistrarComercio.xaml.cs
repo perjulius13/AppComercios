@@ -66,7 +66,7 @@ public partial class RegistrarComercio : ContentPage
 
             GetAddressFromLocation(location.Latitude, location.Longitude); 
 
-            await DisplayAlertAsync("Direccion", direccion, "Ok");
+//            await DisplayAlertAsync("Direccion", direccion, "Ok");
         }
 
     }

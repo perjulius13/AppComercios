@@ -2,66 +2,78 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.CobrarComercio"
-             
+             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
              Title="Cobrar de Licencia de Funcionamiento">
-    
-    <VerticalStackLayout Margin="30" Spacing="12">
-        
-        <Label 
+
+    <ScrollView >
+
+
+        <StackLayout Margin="30" Spacing="12">
+
+
+
+            <Label 
             Text="Llena los datos correctamente"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
 
 
-        <Label Text="Id del comercio"/>
+            <Label Text="Id del comercio"/>
 
-        <Entry 
+            <Entry 
             x:Name="txtidcomer"
             IsEnabled="False"
             />
 
 
-        <Label Text="Nombre del Comercio"/>
+            <Label Text="Nombre del Comercio"/>
 
-        <Entry 
+            <Entry 
     x:Name="txtnombrecomer"
             IsEnabled="False"
     />
 
-        <Label Text="Años de adeudo"/>
+            <Label Text="Años de adeudo"/>
 
-        <Picker x:Name="cbyears"
+            <Picker x:Name="cbyears"
                   SelectedIndexChanged="PickerCiudades_SelectedIndexChanged"
                 >
-            
-        </Picker>
 
-        <Label Text="Costo de la Licencia"/>
-        
-        <Entry 
+            </Picker>
+
+            <Label Text="Costo de la Licencia"/>
+
+            <Entry 
             x:Name="txtcostolic"
             IsEnabled="False"
             />
 
 
-        <Label Text="Total"/>
+            <Label Text="Total"/>
 
-        <Entry
+            <Entry
             x:Name="txttotal"
             />
 
 
-        <Button 
+            <maps:Map x:Name="map" 
+    HeightRequest="300"
+    IsShowingUser="True"
+    
+    />
+
+
+            <Button 
             Text="Realizar Pago"
                 Clicked="Button_Clicked"
                 />
 
 
 
+        </StackLayout>
 
 
 
-
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

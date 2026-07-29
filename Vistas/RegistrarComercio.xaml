@@ -94,13 +94,13 @@ Placeholder="Email del Propietario"
                 <Entry
                 x:Name="txtlatitud"
                     Placeholder="Latitud"
-                    IsEnabled="True"
+                    IsEnabled="False"
                 />
 
                 <Entry
     x:Name="txtlongitud"
                     Placeholder="Longitud"
-                    IsEnabled="True"
+                    IsEnabled="False"
     />
 
 
