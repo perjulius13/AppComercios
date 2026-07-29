@@ -19,9 +19,22 @@ SelectionMode="Single"
  >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
+                    
                     <Border Padding="10"
                  Margin="10"                            
                  >
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"></VisualState>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="LightSkyBlue"></Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
 
                         <VerticalStackLayout>
 
