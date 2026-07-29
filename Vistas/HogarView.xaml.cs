@@ -12,7 +12,9 @@ public partial class HogarView : ContentPage
 
 
     int iduser = 0;
-    int totalcomer = 0; 
+    int totalcomer = 0;
+    int visitas = 0;
+    int pendientes = 0; 
 
     List<VisitComerAuxClass> lista = new List<VisitComerAuxClass>();
 
@@ -22,11 +24,17 @@ public partial class HogarView : ContentPage
 
         var servicio = new ServiciosComercio();
         lista = await servicio.ListarVisitasComercio(iduser);
-        totalcomer = await servicio.GetTotalComercios(); 
+        totalcomer = await servicio.GetTotalComercios();
+
+        pendientes =  visitas; 
+        visitas = lista.Where(e => e.Atendida == false).Count();
+
+        txtpendientes.Text = pendientes.ToString(); 
 
         txtnombre.Text = "Bienvendido ! "+ Preferences.Get("nombreuser", "");
-        txtvistias.Text =  lista.Count.ToString();
+        txtvistias.Text = visitas.ToString(); 
         txttotalcomers.Text = totalcomer.ToString(); 
+
 
     }
 

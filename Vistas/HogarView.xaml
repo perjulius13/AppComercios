@@ -11,6 +11,10 @@
             HorizontalOptions="Center" />
 
 
+        <ActivityIndicator
+            x:Name="actividad"
+            />
+
         <Grid             
     Margin="20,30,20,10"
     RowSpacing="15"
@@ -44,7 +48,7 @@
             />
 
                 <Label
-             Text="15"
+             x:Name="txtpendientes"
             HorizontalOptions="Center"
             FontAttributes="Bold"
                     />

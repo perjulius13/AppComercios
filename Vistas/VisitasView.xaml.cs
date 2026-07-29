@@ -16,6 +16,7 @@ public partial class VisitasView : ContentPage
     int idvisita = 0; 
 
 
+    List<VisitComerAuxClass> primeralista = new List<VisitComerAuxClass>();
     List<VisitComerAuxClass> lista = new List<VisitComerAuxClass>();
     int iduser = 0; 
 
@@ -25,7 +26,9 @@ public partial class VisitasView : ContentPage
 
         iduser = Preferences.Get("iduser", 0); 
         var servicio = new ServiciosComercio();
-        lista = await servicio.ListarVisitasComercio(iduser);
+        primeralista = await servicio.ListarVisitasComercio(iduser);
+
+        lista = primeralista.Where(e => e.Atendida == false).ToList(); 
 
         lstcomercios.ItemsSource = lista; 
         actividad.IsRunning = false; 

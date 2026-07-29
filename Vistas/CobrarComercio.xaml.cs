@@ -86,7 +86,9 @@ public partial class CobrarComercio : ContentPage
 
         visita.Id = idvisita;
         visita.Atendida = true;
-        visita.Observaciones = ""; 
+        visita.Observaciones = "";
+        visita.Idcomercio = idcomercio;
+        visita.Idusuario = pag.IdUserReg; 
         
 
         await servicio.CobrarComercio(pag);
