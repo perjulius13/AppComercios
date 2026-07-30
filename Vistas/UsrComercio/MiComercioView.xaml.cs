@@ -6,4 +6,11 @@ public partial class MiComercioView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+
+
+
+
+
 }

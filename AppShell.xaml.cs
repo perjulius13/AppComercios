@@ -1,4 +1,5 @@
 ﻿using AppComercios.Vistas;
+using AppComercios.Vistas.UsrComercio;
 
 namespace AppComercios
 {
@@ -107,6 +108,28 @@ namespace AppComercios
 
         public void MenuComerciante ()
         {
+
+            menutabs.Items.Add(new ShellContent
+            {
+                Title = "Home",
+                Icon = "hogar.png",
+                ContentTemplate = new DataTemplate(typeof(HomeComercioView)),
+            });
+
+            menutabs.Items.Add(new ShellContent
+            {
+                Title = "Mi Comercio",
+                Icon = "plaza.png",
+                ContentTemplate = new DataTemplate(typeof(MiComercioView)),
+            });
+
+            menutabs.Items.Add(new ShellContent
+            {
+                Title = "Mis Pagos",
+                Icon = "lista.png",
+                ContentTemplate = new DataTemplate(typeof(PagosListComerView)),
+            });
+
 
         }
 

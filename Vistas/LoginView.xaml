@@ -58,7 +58,11 @@
         FontSize="18"        
                 BackgroundColor="White"
                 TextColor="Black"
-        CornerRadius="30"/>
+        CornerRadius="30"
+            Clicked="btnregistrer_Clicked"
+            />
+        
+        
 
     </VerticalStackLayout>
 </ContentPage>
