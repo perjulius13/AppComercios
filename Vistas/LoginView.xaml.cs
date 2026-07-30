@@ -13,7 +13,7 @@ public partial class LoginView : ContentPage
 
     UsuariosClass user = new UsuariosClass();
     UsuariosClass respuesta = new UsuariosClass();
-    string tel = "";
+    string username = "";
     string contra = "";
 
     private async void Button_Clicked(object sender, EventArgs e)
@@ -22,27 +22,30 @@ public partial class LoginView : ContentPage
 
         btningresar.IsEnabled = false;
 
-        txttelefono.Text = "2222398762";
-        txtcontra.Text = "123"; 
+        txtusuario.Text = "VISITADOR1";
+        txtcontra.Text = "123";
 
-        tel = txttelefono.Text;
+        username = txtusuario.Text;
         contra = txtcontra.Text;
 
-        user.Telefono = tel;
+        user.Username = username;
         user.Contra = contra;
 
         var servicio = new ApiService();
         respuesta = await servicio.LoginApp(user); 
 
-        if(respuesta.Telefono == tel && respuesta.Contra == contra)
+        if(respuesta.Username == username && respuesta.Contra == contra)
         {
-            Preferences.Set("iduser", respuesta.Iduser);
-            Preferences.Set("saldouser", respuesta.Saldo);
-            Preferences.Set("nombreuser", respuesta.Nombre + " "  + respuesta.Apellidos);
+            Preferences.Set("iduser", respuesta.IdUser);
+            Preferences.Set("tipouser", respuesta.IdTipoUser);
+            Preferences.Set("saldouser", 500);
+            Preferences.Set("nombreuser", respuesta.Nombre + " "  + respuesta.Paterno + " " +respuesta.Materno);
             
 
-            await DisplayAlertAsync("PEROTE", "Bienvenido " + respuesta.Nombre + " " + respuesta.Apellidos, "Ok"); 
+            await DisplayAlertAsync("PEROTE", "Bienvenido " + respuesta.Nombre + " " + respuesta.Paterno + " " + respuesta.Materno, "Ok");
             App.Current.MainPage = new AppShell();
+
+          
         }
         else
         {

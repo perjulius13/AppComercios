@@ -17,12 +17,12 @@
             HorizontalOptions="Center" />
 
         <Entry             
-            x:Name="txttelefono"
+            x:Name="txtusuario"
             Margin="30"
             HorizontalTextAlignment="Center"
             TextTransform="Uppercase" 
             FontAttributes="Bold"            
-            Placeholder="Celular (10 digitos)"/>
+            Placeholder="Usuario"/>
 
 
         <Entry

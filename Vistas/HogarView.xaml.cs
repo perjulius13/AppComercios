@@ -26,8 +26,9 @@ public partial class HogarView : ContentPage
         lista = await servicio.ListarVisitasComercio(iduser);
         totalcomer = await servicio.GetTotalComercios();
 
-        pendientes =  visitas; 
+        
         visitas = lista.Where(e => e.Atendida == false).Count();
+        pendientes = visitas;
 
         txtpendientes.Text = pendientes.ToString(); 
 

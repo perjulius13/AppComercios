@@ -43,7 +43,7 @@ namespace AppComercios.Servicios
 
         public async Task<UsuariosClass> GetDatosUser(int iduser)
         {
-            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Usuarios/GetUserAppId?id={iduser}");
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Usuarios/GetUsuarioById?iduser={iduser}");
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
@@ -166,7 +166,7 @@ namespace AppComercios.Servicios
 
         public async Task<UsuariosClass> LoginApp(UsuariosClass user)
         {
-            string url = "https://www.urbanitydata.com/api/Usuarios/LoginApp";
+            string url = "https://www.urbanitydata.com/api/Usuarios/LoginAppV2";
 
             try
             {

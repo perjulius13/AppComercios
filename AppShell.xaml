@@ -33,39 +33,37 @@
     <FlyoutItem
     Title="Home"    
         Icon="casa.png"
+        x:Name="menutabs"
     >
 
 
-        <ShellContent
+        <!--<ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate vistas:HogarView}"
             Icon="hogar.png"
             />
-
+        
         <ShellContent
             Title="Mapa"
             ContentTemplate="{DataTemplate vistas:MapaComercios}"
             Icon="mapa.png"
             />
-            
-            <ShellContent
+        <ShellContent
             Title="Visitas"
             ContentTemplate="{DataTemplate vistas:VisitasView}"
             Icon="lista.png"
             />
-
-
-          <ShellContent
+        <ShellContent
             Title="Registrar Comercio"
             ContentTemplate="{DataTemplate vistas:RegistrarComercio}"
             Icon="plaza.png"
-            />
+            />-->
 
 
     </FlyoutItem>
 
 
-    <ShellContent 
+    <!--<ShellContent 
         Title="Mi perfil"
         ContentTemplate="{DataTemplate vistas:PerfilView}"
         Icon="profile.png"
@@ -82,7 +80,7 @@
     Title="Ayuda"
     ContentTemplate="{DataTemplate vistas:AyudaView}"
         Icon="informacion.png"
-    />
+    />-->
 
 
 
