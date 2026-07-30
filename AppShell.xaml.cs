@@ -98,7 +98,7 @@ namespace AppComercios
               {
                   Title = "Ayuda",
                   Icon = "informacion.png",
-                  ContentTemplate = new DataTemplate(typeof(PerfilView))
+                  ContentTemplate = new DataTemplate(typeof(AyudaView))
               });
 
         }
