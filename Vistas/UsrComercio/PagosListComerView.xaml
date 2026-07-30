@@ -11,12 +11,49 @@
             Text="En este listado se muestran tus ultimos 10 pagos"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+
+
+        <CollectionView
+ ItemsLayout="VerticalList"
+ x:Name="lstPagos"
+ 
+SelectionMode="Single"
+ >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10"
+                 Margin="10"                            
+                 >
+
+                        <VerticalStackLayout>
+
+                            <Label Text="{Binding IdPeticion, StringFormat='Folio: {0}' }"/>
+
+                            <Label Text="{Binding Cantidad, StringFormat='Cantidad: {0}' }"/>
+
+                            <Label Text="{Binding Importe, StringFormat='Importe: {0}' }"/>
+
+                            <Label Text="{Binding Fechapago, StringFormat='Fecha de Pago: {0}' }"/>
+
+
+                        </VerticalStackLayout>
+
+
+
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         
         
         
         
-        
-        
+
+
+
+
+
     </VerticalStackLayout>
     
 </ContentPage>

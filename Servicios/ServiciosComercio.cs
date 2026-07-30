@@ -170,6 +170,21 @@ namespace AppComercios.Servicios
             return false;
         }
 
+        public async Task<List<PagosClass>> GetUltimosDiezPagos(int idcomer)
+        {
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Reportes/GetLastTenPagComer?idcomer={idcomer}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<PagosClass>>(json);
+            }
+
+            return new List<PagosClass>(); 
+        }
+
+
+
+
 
     }
 }
