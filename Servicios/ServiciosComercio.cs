@@ -1,4 +1,5 @@
-﻿using AppComercios.Modelos;
+﻿using Android.Gms.Common.Apis;
+using AppComercios.Modelos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -183,7 +184,17 @@ namespace AppComercios.Servicios
         }
 
 
+        public async Task <List<PropietarioComerAuxClass>> ListarComerciosPropietario(int idusuario)
+        {
+             var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Comercios/ListarComerciosPropietario?idusuario={idusuario}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<PropietarioComerAuxClass>>(json);
+            }
 
+            return new List<PropietarioComerAuxClass>();
+        }
 
 
     }

@@ -52,6 +52,7 @@ public partial class MiComercioView : ContentPage
         map.Pins.Add(marker);
     }
 
+ 
 
 
 

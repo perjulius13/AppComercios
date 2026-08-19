@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppComercios.Vistas.UsrComercio.CompletaDatosView"
+             Title="Datos del Comercio">
+    
+    <VerticalStackLayout Margin="20">
+
+
+        <Label Text="Licencia Mercantil"/>
+        <Entry 
+            Placeholder="Licencia Mercantil"
+           
+            />
+
+
+
+        <Label Text="Telefono del Propietario"/>
+        <Entry Placeholder="telefono"/>
+
+        <Label Text="Email del Propietario"/>
+        <Entry Placeholder="telefono"
+               Keyboard="Telephone"
+               />
+
+        <Label Text="Dimensiones del Local"/>
+        <Entry Placeholder="Dimensiones"/>
+
+        <Label Text="Numero"/>
+        <Entry Placeholder="Numero"/>
+
+
+
+
+
+        <Button  Text="Actualizar Datos" 
+                 Margin="30"
+                 Clicked="Button_Clicked"
+                 />
+
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

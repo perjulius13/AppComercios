@@ -1,4 +1,5 @@
 ﻿using AppComercios.Modelos;
+using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,16 @@ namespace AppComercios.Servicios
     {
 
         private readonly HttpClient _cliente = new HttpClient();
+        //private readonly IPasswordHasher<UsuariosClass> _passwordHasher;
+
+
+
+
+        //public ApiService (IPasswordHasher<UsuariosClass> passwordHasher)
+        //{
+        //    _passwordHasher = passwordHasher;
+
+        //}
 
 
         public async Task<List<AsignacionPlazaClass>> ListarAsignaciones()

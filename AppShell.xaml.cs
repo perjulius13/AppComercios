@@ -118,10 +118,13 @@ namespace AppComercios
 
             menutabs.Items.Add(new ShellContent
             {
-                Title = "Mi Comercio",
+                Title = "Mis Comercios",
                 Icon = "plaza.png",
-                ContentTemplate = new DataTemplate(typeof(MiComercioView)),
+                ContentTemplate = new DataTemplate(typeof(MisComerciosView)),
             });
+
+     
+
 
             menutabs.Items.Add(new ShellContent
             {

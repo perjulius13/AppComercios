@@ -22,8 +22,8 @@ public partial class LoginView : ContentPage
 
         btningresar.IsEnabled = false;
 
-        txtusuario.Text = "VISITADOR1";
-        txtcontra.Text = "123";
+        txtusuario.Text = "VISITADOR2";
+        txtcontra.Text = "VISITADOR2";
 
         username = txtusuario.Text;
         contra = txtcontra.Text;
@@ -31,10 +31,12 @@ public partial class LoginView : ContentPage
         user.Username = username;
         user.Contra = contra;
 
+        //TODO arreglar el login bien 
+
         var servicio = new ApiService();
         respuesta = await servicio.LoginApp(user); 
 
-        if(respuesta.Username == username && respuesta.Contra == contra)
+        if(respuesta.Username == username )
         {
             Preferences.Set("iduser", respuesta.IdUser);
             Preferences.Set("tipouser", respuesta.IdTipoUser);
@@ -64,8 +66,8 @@ public partial class LoginView : ContentPage
 
         btningresar.IsEnabled = false;
 
-        txtusuario.Text = "COMERCIO1";
-        txtcontra.Text = "123";
+        txtusuario.Text = "COMERCIO2";
+        txtcontra.Text = "COMERCIO2";
 
         username = txtusuario.Text;
         contra = txtcontra.Text;
@@ -76,12 +78,13 @@ public partial class LoginView : ContentPage
         var servicio = new ApiService();
         respuesta = await servicio.LoginApp(user);
 
-        if (respuesta.Username == username && respuesta.Contra == contra)
+        if (respuesta.Username == username )
         {
             Preferences.Set("iduser", respuesta.IdUser);
             Preferences.Set("tipouser", respuesta.IdTipoUser);
             Preferences.Set("saldouser", 500);
             Preferences.Set("nombreuser", respuesta.Nombre + " " + respuesta.Paterno + " " + respuesta.Materno);
+
 
 
             await DisplayAlertAsync("PEROTE", "Bienvenido " + respuesta.Nombre + " " + respuesta.Paterno + " " + respuesta.Materno, "Ok");
