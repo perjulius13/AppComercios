@@ -14,6 +14,7 @@ public partial class MisComerciosView : ContentPage
     ComerciosAuxClass comer = new ComerciosAuxClass();
     List<PropietarioComerAuxClass> lista = new List<PropietarioComerAuxClass>();
     int iduser = 0;
+    int idcomercio = 0;
 
     protected override async void OnAppearing()
     {
@@ -26,7 +27,18 @@ public partial class MisComerciosView : ContentPage
     }
 
 
+    public async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {        
+        idcomercio = (int)(e.CurrentSelection.FirstOrDefault() as PropietarioComerAuxClass)?.Idcomercio;
+        await Navigation.PushAsync(new ComercioDetailView(idcomercio));
+    }
 
+
+
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SolBajaComerView());
+    }
 
 
 

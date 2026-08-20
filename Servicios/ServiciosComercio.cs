@@ -1,4 +1,4 @@
-﻿using Android.Gms.Common.Apis;
+﻿
 using AppComercios.Modelos;
 using Newtonsoft.Json;
 using System;
@@ -73,6 +73,28 @@ namespace AppComercios.Servicios
 
             return false;
         }
+
+
+        public async Task<bool> ActualizarComercio(ComerciosClass comer)
+        {
+            string url = "https://www.urbanitydata.com/api/Comercios/EditarComer";
+
+            try
+            {
+                HttpResponseMessage response = await _cliente.PostAsJsonAsync<ComerciosClass>(url, comer);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+            }
+
+            return false;
+        }
+
 
 
 

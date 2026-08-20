@@ -54,10 +54,14 @@
     Text="Saldo: "/>
 
         </VerticalStackLayout>
+
+
+
         
-        
-        
-        
-        
+
+
+
+
+
     </VerticalStackLayout>
 </ContentPage>
