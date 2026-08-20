@@ -219,5 +219,28 @@ namespace AppComercios.Servicios
         }
 
 
+        public async Task<bool> RegistrarSolBaja(SolbajacomerClass comer)
+        {
+            string url = "https://www.urbanitydata.com/api/Comercios/SolicitudBaja";
+
+            try
+            {
+                HttpResponseMessage response = await _cliente.PostAsJsonAsync<SolbajacomerClass>(url, comer);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+            }
+
+            return false;
+        }
+
+
+
+
     }
 }

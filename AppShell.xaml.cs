@@ -123,15 +123,24 @@ namespace AppComercios
                 ContentTemplate = new DataTemplate(typeof(MisComerciosView)),
             });
 
-     
-
-
             menutabs.Items.Add(new ShellContent
             {
                 Title = "Mis Pagos",
                 Icon = "lista.png",
                 ContentTemplate = new DataTemplate(typeof(PagosListComerView)),
             });
+
+
+            menutabs.Items.Add(new ShellContent
+            {
+                Title = "Bajas",
+                Icon = "plaza.png",
+                ContentTemplate = new DataTemplate(typeof(SolBajaListView)),
+            });
+
+
+
+     
 
 
         }

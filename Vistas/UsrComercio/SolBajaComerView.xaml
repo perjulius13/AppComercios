@@ -13,19 +13,35 @@
                />
 
 
-        <Label Text="Id del comercio"
-               Margin="0,20,0,0"
+        <Label Text="Selecciona el comercio"
+               Margin="10"
                />
         
-        <Entry 
-            Placeholder="Id del comercio"
-               Keyboard="Numeric"  
-            x:Name="txtcomercio"
-               />
+       
+        <Picker x:Name="combocomercios"
+                Margin="10"
+                />
+
+
+
+        <Label
+            Text="Describa el motivo de baja del comercio"
+            Margin="20"
+            HorizontalOptions="Center"
+            />
+
+
+        <Entry
+            x:Name="txtmotivo"
+            Placeholder="100 caracteres"
+            Margin="10"
+            />
+
+
 
         <Button
-            Text="Buscar"
-            Margin="30,10,30,10"
+            Text="Enviar Solicitud de Baja"
+            Margin="30"
             Clicked="Button_Clicked"
             />
         

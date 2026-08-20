@@ -149,6 +149,9 @@
 	  <MauiXaml Update="Vistas\UsrComercio\SolBajaComerView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vistas\UsrComercio\SolBajaListView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\VisitasView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
