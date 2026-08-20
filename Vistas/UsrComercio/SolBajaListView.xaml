@@ -5,12 +5,44 @@
              Title="Solicitud de Baja">
     
     <VerticalStackLayout Margin="20">
-        
-        
-        
-        
-        
-        
-        
+
+
+        <Label Text="espacio en construccion"/>
+
+        <!--<CollectionView
+ ItemsLayout="VerticalList"
+ x:Name="lstComercios"
+ SelectionChanged="lstComercios_SelectionChanged"
+SelectionMode="Single"
+ >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10"
+                 Margin="10"                            
+                 >
+
+                        <VerticalStackLayout>
+
+                            <Label Text="{Binding Idcomercio, StringFormat='ID: {0}' }"/>
+
+                            <Label Text="{Binding NombreComer, StringFormat='Nombre: {0}' }"/>
+
+                            <Label Text="{Binding Zona, StringFormat='Zona: {0}' }"/>
+
+                            <Label Text="{Binding TipoComercio, StringFormat='Tipo: {0}' }"/>
+
+
+                        </VerticalStackLayout>
+
+
+
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+
+
+
+
     </VerticalStackLayout>
 </ContentPage>

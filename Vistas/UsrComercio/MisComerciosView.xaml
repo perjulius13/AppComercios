@@ -42,9 +42,6 @@ SelectionMode="Single"
 
 
 
-        <Button Text="Solicitud de baja"
-                Clicked="Button_Clicked"
-                Margin="30"/>
-
+    
     </VerticalStackLayout>
 </ContentPage>
