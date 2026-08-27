@@ -7,6 +7,10 @@
     <VerticalStackLayout Margin="20">
 
 
+        
+        
+        
+        
         <Label 
             Text="Ingresa los datos correctamente"
             HorizontalOptions="Center"

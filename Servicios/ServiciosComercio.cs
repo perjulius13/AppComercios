@@ -240,6 +240,21 @@ namespace AppComercios.Servicios
         }
 
 
+        public async Task<List<SolBajaComerAuxClass>> ListarSolBajas(int idpropietario)
+        {
+            var response = await _cliente.GetAsync($"https://www.urbanitydata.com/api/Comercios/ListarSolicitudesBaja?idpropietario={idpropietario}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<SolBajaComerAuxClass>>(json);
+            }
+
+            return new List<SolBajaComerAuxClass>();
+        }
+
+
+
+
 
 
     }

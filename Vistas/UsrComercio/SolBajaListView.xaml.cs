@@ -12,27 +12,35 @@ public partial class SolBajaListView : ContentPage
 
 
 
-    List<PropietarioComerAuxClass> lista = new List<PropietarioComerAuxClass>();
+    List<SolBajaComerAuxClass> lst = new List<SolBajaComerAuxClass>();
+    
     int iduser = 0;
 
 
 
     protected override async void OnAppearing()
     {
+        actividad.IsRunning = true; 
+
         var servicio = new ServiciosComercio();
         iduser = Preferences.Get("iduser", 0);
 
-        lista = await servicio.ListarComerciosPropietario(iduser);
-
-        lstComercios.ItemsSource = lista;
+        lst = await servicio.ListarSolBajas(iduser);
+        lstbajas.ItemsSource = lst;
+        actividad.IsRunning = false; 
     }
+
 
     private void lstComercios_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         //mirar solicitud 
+
     }
 
-
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SolBajaComerView())  ;
+    }
 
 
 }
