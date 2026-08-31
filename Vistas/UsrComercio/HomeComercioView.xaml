@@ -8,40 +8,126 @@
         
         
         <Label 
-            Text="Bienvenido "
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            Padding="10"
+            Text="¡Bienvenido!"                        
+            FontAttributes="Bold"
+            TextColor="#0B4CDD"
+            Margin="30,10,0,10"
             />
 
-        <Label x:Name="txtnombre"
-               HorizontalOptions="Center"
-            Padding="10"   
+        <Label x:Name="txtnombre"                           
+               FontAttributes="Bold"
+               Margin="30,0,0,0"
                />
 
 
+        <Border
+    StrokeShape="RoundRectangle 10,10,10,10"
+    Margin="20"
+    BackgroundColor="#1C59AF"
+    Opacity="0.8">
+
+            <HorizontalStackLayout
+        Margin="20"
+        Spacing="10">
+
+                <Image
+            Source="storefront.png"
+            WidthRequest="60"
+            HeightRequest="60"
+            VerticalOptions="Center" />
+
+                <VerticalStackLayout
+            VerticalOptions="Center"
+            Spacing="2">
+
+                    <Label
+                Text="Mantén tus pagos al día."
+                FontSize="16"
+                TextColor="White"
+                FontAttributes="Bold" />
+
+                    <Label
+                Text="Evita recargos y sanciones"
+                FontSize="14"
+                TextColor="White" />
+
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+        </Border>
 
 
-        <StackLayout Orientation="Vertical" BackgroundColor="AliceBlue" Margin="30">
 
 
-            <Label
-                Text="Estatus"
-                Padding="10"
-                HorizontalOptions="Center"
-                />
+        <Label Text="Resumen"
+               FontAttributes="Bold"
+               Margin="30,0,0,0"/>
+
+
+        <Border 
+            BackgroundColor="#F2F5FC"
+            Margin="30,5,30,5"
+                >
+
+
+            <HorizontalStackLayout>
+
+                <VerticalStackLayout>
+
+                    <Label Text="2"/>
+                    <Label Text="Comercios a tu nombre"/>
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+
+                    <Label Text="5"/>
+                    <Label Text="Pagos realizados"/>
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+
+                    <Label Text="0"/>
+                    <Label Text="Solicitudes en proceso"/>
+
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+         
+
+
+         
+
+
+        </Border>
+
+
+
+
+
+        <Border Margin="20"
+                BackgroundColor="#ECF3FF"
+                StrokeShape="RoundRectangle 10,10,10,10">
             
-            <Label 
-                Text="No tienenes ningun pago pendiente "
-                HorizontalOptions="Center"
-                Padding="30"
-                />
+            <VerticalStackLayout Padding="10">
+                <Label Text="Informacion Importante"
+       TextColor="#0B4CDD"
+       FontAttributes="Bold"/>
+
+                <Label Text="Mantener tus pagos al dia contribuye al desarrollo de nuestro municipio."
+                       FontSize="12"/>
+                
+            </VerticalStackLayout>
+            
+        </Border>
 
 
-        </StackLayout>
-        
-        
-        
+
+
+
 
 
     </VerticalStackLayout>
