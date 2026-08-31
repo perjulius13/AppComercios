@@ -34,7 +34,8 @@
             Source="storefront.png"
             WidthRequest="60"
             HeightRequest="60"
-            VerticalOptions="Center" />
+            VerticalOptions="Center"
+                />
 
                 <VerticalStackLayout
             VerticalOptions="Center"
@@ -67,30 +68,103 @@
 
         <Border 
             BackgroundColor="#F2F5FC"
-            Margin="30,5,30,5"
+            Margin="20,5,20,5"
+            StrokeShape="RoundRectangle 10,10,10,10"
                 >
 
 
-            <HorizontalStackLayout>
+            <HorizontalStackLayout Padding="10" Spacing="70">
 
                 <VerticalStackLayout>
 
-                    <Label Text="2"/>
-                    <Label Text="Comercios a tu nombre"/>
+                    <Image
+                           Source="storefront.png"
+                           WidthRequest="50"
+                           HeightRequest="50"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                                                                        />
+
+                    <VerticalStackLayout Spacing="2">
+                        
+                        <Label Text="2"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"            
+            />
+                        <Label Text="Comercios"
+            HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="11"
+            />
+                        <Label Text="a tu nombre"
+                               HorizontalOptions="Center"
+                               FontSize="11"/>
+                        
+                    </VerticalStackLayout>
+
+               
 
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
 
-                    <Label Text="5"/>
-                    <Label Text="Pagos realizados"/>
+                    <Image
+               Source="payment.png"
+               WidthRequest="50"
+               HeightRequest="50"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+                                                            />
+
+                    <VerticalStackLayout Spacing="2">
+
+                        <Label Text="2"
+HorizontalOptions="Center"
+FontAttributes="Bold"            
+/>
+                        <Label Text="Pagos"
+HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="11"
+/>
+                        <Label Text="realizados"
+                   HorizontalOptions="Center"
+                   FontSize="11"/>
+
+                    </VerticalStackLayout>
+
+
 
                 </VerticalStackLayout>
 
                 <VerticalStackLayout>
 
-                    <Label Text="0"/>
-                    <Label Text="Solicitudes en proceso"/>
+                    <Image
+               Source="aceptacion.png"
+               WidthRequest="50"
+               HeightRequest="50"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+                                                            />
+
+                    <VerticalStackLayout Spacing="2">
+
+                        <Label Text="2"
+HorizontalOptions="Center"
+FontAttributes="Bold"            
+/>
+                        <Label Text="Solicitudes"
+HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="11"
+/>
+                        <Label Text="en proceso"
+                   HorizontalOptions="Center"
+                   FontSize="11"/>
+
+                    </VerticalStackLayout>
+
+
 
                 </VerticalStackLayout>
 
