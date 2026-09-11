@@ -1,62 +1,252 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.VisitasView"
-             Title="Tus visitas pendientes">
-    
-    <VerticalStackLayout Margin="20">
+             Title="Visitas"
+             BackgroundColor="#F5F7FA">
+
+    <ContentPage.Resources>
+
+        <!-- Colores de la aplicación -->
+
+        <Color x:Key="PrimaryColor">#2563EB</Color>
+
+        <Color x:Key="TextColor">#1F2937</Color>
+
+        <Color x:Key="SecondaryTextColor">#6B7280</Color>
+
+        <Color x:Key="CardColor">#FFFFFF</Color>
+
+        <Color x:Key="ZoneBackground">#EFF6FF</Color>
+
+        <Color x:Key="ZoneText">#2563EB</Color>
 
 
-        <ActivityIndicator x:Name="actividad"/>
-        
+        <!-- Sombra de las tarjetas -->
+
+        <Shadow x:Key="CardShadow"
+                Brush="#25000000"
+                Offset="0,3"
+                Radius="8"
+                Opacity="0.20" />
+
+    </ContentPage.Resources>
 
 
-        <CollectionView
- ItemsLayout="VerticalList"
- x:Name="lstcomercios"
- SelectionChanged="lstcomercios_SelectionChanged"
-SelectionMode="Single"
- >
+    <Grid RowDefinitions="Auto,*"
+          Padding="16,10,16,0">
+
+
+        <!-- ====================================== -->
+        <!-- ENCABEZADO -->
+        <!-- ====================================== -->
+
+        <VerticalStackLayout Grid.Row="0"
+                             Margin="4,5,4,15"
+                             Spacing="4">
+
+            <Label Text="Tus visitas pendientes"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource TextColor}" />
+
+            <Label Text="Selecciona un comercio para consultar su visita"
+                   FontSize="14"
+                   TextColor="{StaticResource SecondaryTextColor}" />
+
+        </VerticalStackLayout>
+
+
+        <!-- ====================================== -->
+        <!-- LISTADO -->
+        <!-- ====================================== -->
+
+        <CollectionView Grid.Row="1"
+                        x:Name="lstcomercios"
+                        ItemsLayout="VerticalList"
+                        SelectionChanged="lstcomercios_SelectionChanged"
+                        SelectionMode="Single">
+
+            <!-- INDICADOR DE CARGA -->
+
+            <CollectionView.Header>
+
+                <ActivityIndicator x:Name="actividad"
+                                   IsVisible="False"
+                                   IsRunning="False"
+                                   Color="{StaticResource PrimaryColor}"
+                                   Margin="0,0,0,10" />
+
+            </CollectionView.Header>
+
+
+            <!-- CUANDO NO EXISTEN VISITAS -->
+
+            <CollectionView.EmptyView>
+
+                <VerticalStackLayout VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     Spacing="10">
+
+                    <Label Text="📋"
+                           FontSize="45"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="No tienes visitas pendientes"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TextColor}"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="Aquí aparecerán los comercios que debes visitar."
+                           FontSize="14"
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           HorizontalTextAlignment="Center" />
+
+                </VerticalStackLayout>
+
+            </CollectionView.EmptyView>
+
+
+            <!-- ================================== -->
+            <!-- TARJETA -->
+            <!-- ================================== -->
+
             <CollectionView.ItemTemplate>
+
                 <DataTemplate>
-                    
-                    <Border Padding="10"
-                 Margin="10"                            
-                 >
+
+                    <Border Margin="0,0,0,12"
+                            Padding="16"
+                            BackgroundColor="{StaticResource CardColor}"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            Shadow="{StaticResource CardShadow}">
+
+                        <Grid RowDefinitions="Auto,Auto,Auto"
+                              ColumnDefinitions="Auto,*,Auto"
+                              RowSpacing="8">
+
+
+                            <!-- ICONO -->
+
+                            <Border Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.RowSpan="2"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    BackgroundColor="{StaticResource ZoneBackground}"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 12"
+                                    VerticalOptions="Center">
+
+                                <Label Text="🏪"
+                                       FontSize="23"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+
+                            </Border>
+
+
+                            <!-- NOMBRE DEL COMERCIO -->
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="1"
+                                   Margin="12,0,5,0"
+                                   Text="{Binding NombreComer}"
+                                   FontSize="17"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource TextColor}"
+                                   VerticalOptions="End" />
+
+
+                            <!-- FLECHA -->
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="2"
+                                   Grid.RowSpan="2"
+                                   Text="›"
+                                   FontSize="30"
+                                   TextColor="{StaticResource PrimaryColor}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+
+
+                            <!-- ZONA -->
+
+                            <Border Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="12,2,0,0"
+                                    Padding="8,3"
+                                    BackgroundColor="{StaticResource ZoneBackground}"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 8"
+                                    HorizontalOptions="Start">
+
+                                <Label Text="{Binding Zona,
+                                                     StringFormat='Zona {0}'}"
+                                       FontSize="12"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource ZoneText}" />
+
+                            </Border>
+
+
+                            <!-- ID -->
+
+                            <Label Grid.Row="2"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="3"
+                                   Margin="0,8,0,0"
+                                   Text="{Binding Idcomercio,
+                                                  StringFormat='ID de comercio: {0}'}"
+                                   FontSize="11"
+                                   TextColor="{StaticResource SecondaryTextColor}" />
+
+                        </Grid>
+
+                        <!-- ESTADOS DE SELECCIÓN -->
 
                         <VisualStateManager.VisualStateGroups>
+
                             <VisualStateGroup Name="CommonStates">
-                                <VisualState Name="Normal"></VisualState>
+
+                                <VisualState Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor"
+                                                Value="{StaticResource CardColor}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+
                                 <VisualState Name="Selected">
                                     <VisualState.Setters>
-                                        <Setter Property="BackgroundColor" Value="LightSkyBlue"></Setter>
+
+                                        <Setter Property="BackgroundColor"
+                                                Value="#E8F0FE" />
+
+                                        <Setter Property="Stroke"
+                                                Value="{StaticResource PrimaryColor}" />
+
+                                        <Setter Property="StrokeThickness"
+                                                Value="2" />
+
                                     </VisualState.Setters>
                                 </VisualState>
 
                             </VisualStateGroup>
+
                         </VisualStateManager.VisualStateGroups>
 
-                        <VerticalStackLayout>
-
-
-                            <Label Text="{Binding Idcomercio, StringFormat='ID: {0}' }"/>
-                            
-                            <Label Text="{Binding NombreComer, StringFormat='Comercio: {0}' }"/>
-
-                            <Label Text="{Binding  Zona, StringFormat='Zona: {0}'}"/>
-                            
-
-                        </VerticalStackLayout>
-
-
-
                     </Border>
+
                 </DataTemplate>
+
             </CollectionView.ItemTemplate>
+
         </CollectionView>
 
+    </Grid>
 
-
-
-    </VerticalStackLayout>
 </ContentPage>

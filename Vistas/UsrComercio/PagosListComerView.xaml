@@ -2,58 +2,221 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppComercios.Vistas.UsrComercio.PagosListComerView"
-             Title="Listado de Pagos">
-    
-    <VerticalStackLayout>
-        
-        
-        <Label 
-            Text="En este listado se muestran tus ultimos 10 pagos"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Mis Pagos"
+             BackgroundColor="#F5F7FA">
+
+    <ContentPage.Resources>
+
+        <!-- Colores -->
+        <Color x:Key="PrimaryColor">#2563EB</Color>
+        <Color x:Key="TextColor">#1F2937</Color>
+        <Color x:Key="SecondaryTextColor">#6B7280</Color>
+        <Color x:Key="CardColor">#FFFFFF</Color>
+        <Color x:Key="SuccessColor">#16A34A</Color>
+
+        <!-- Sombra -->
+        <Shadow x:Key="CardShadow"
+                Brush="#25000000"
+                Offset="0,3"
+                Radius="8"
+                Opacity="0.25" />
+
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="Auto,*"
+          Padding="16,10,16,0">
+
+
+        <!-- ================================================= -->
+        <!-- ENCABEZADO -->
+        <!-- ================================================= -->
+
+        <VerticalStackLayout Grid.Row="0"
+                             Spacing="4"
+                             Margin="4,5,4,15">
+
+            <Label Text="Mis pagos"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource TextColor}" />
+
+            <Label Text="Consulta tus últimos 10 pagos registrados"
+                   FontSize="14"
+                   TextColor="{StaticResource SecondaryTextColor}" />
+
+        </VerticalStackLayout>
 
 
 
-        <CollectionView
- ItemsLayout="VerticalList"
- x:Name="lstPagos"
- 
-SelectionMode="Single"
- >
+        <!-- ================================================= -->
+        <!-- LISTADO -->
+        <!-- ================================================= -->
+
+        <CollectionView Grid.Row="1"
+                        x:Name="lstPagos"
+                        SelectionMode="Single"
+                        ItemsLayout="VerticalList">
+
+            <CollectionView.EmptyView>
+
+                <VerticalStackLayout VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     Spacing="10">
+
+                    <Label Text="💳"
+                           FontSize="45"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="No tienes pagos registrados"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TextColor}"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="Aquí aparecerán tus pagos realizados."
+                           FontSize="14"
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           HorizontalTextAlignment="Center" />
+
+                </VerticalStackLayout>
+
+            </CollectionView.EmptyView>
+
+
             <CollectionView.ItemTemplate>
+
                 <DataTemplate>
-                    <Border Padding="10"
-                 Margin="10"                            
-                 >
 
-                        <VerticalStackLayout>
+                    <!-- TARJETA DEL PAGO -->
+                    <Border BackgroundColor="{StaticResource CardColor}"
+                            StrokeThickness="0"
+                            Padding="16"
+                            Margin="0,0,0,12"
+                            StrokeShape="RoundRectangle 14"
+                            Shadow="{StaticResource CardShadow}">
 
-                            <Label Text="{Binding IdPeticion, StringFormat='Folio: {0}' }"/>
-
-                            <Label Text="{Binding Cantidad, StringFormat='Cantidad: {0}' }"/>
-
-                            <Label Text="{Binding Importe, StringFormat='Importe: {0}' }"/>
-
-                            <Label Text="{Binding Fechapago, StringFormat='Fecha de Pago: {0}' }"/>
-
-
-                        </VerticalStackLayout>
+                        <Grid RowDefinitions="Auto,Auto,Auto"
+                              ColumnDefinitions="*,Auto"
+                              RowSpacing="10">
 
 
+                            <!-- ================================= -->
+                            <!-- FOLIO + ESTADO -->
+                            <!-- ================================= -->
+
+                            <HorizontalStackLayout Grid.Row="0"
+                                                   Grid.Column="0"
+                                                   Spacing="6">
+
+                                <Label Text="Pago"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource TextColor}" />
+
+                                <Label Text="{Binding IdPeticion,
+                                                     StringFormat='# {0}'}"
+                                       FontSize="14"
+                                       TextColor="{StaticResource SecondaryTextColor}" />
+
+                            </HorizontalStackLayout>
+
+
+                            <!-- ESTADO -->
+
+                            <Border Grid.Row="0"
+                                    Grid.Column="1"
+                                    BackgroundColor="#DCFCE7"
+                                    Padding="10,4"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 10">
+
+                                <Label Text="REALIZADO"
+                                       FontSize="10"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource SuccessColor}" />
+
+                            </Border>
+
+
+
+                            <!-- ================================= -->
+                            <!-- IMPORTE -->
+                            <!-- ================================= -->
+
+                            <VerticalStackLayout Grid.Row="1"
+                                                 Grid.ColumnSpan="2"
+                                                 Spacing="0">
+
+                                <Label Text="Importe pagado"
+                                       FontSize="12"
+                                       TextColor="{StaticResource SecondaryTextColor}" />
+
+                                <Label Text="{Binding Importe,
+                                                     StringFormat='${0:N2}'}"
+                                       FontSize="27"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource PrimaryColor}" />
+
+                            </VerticalStackLayout>
+
+
+
+                            <!-- ================================= -->
+                            <!-- INFORMACIÓN -->
+                            <!-- ================================= -->
+
+                            <Grid Grid.Row="2"
+                                  Grid.ColumnSpan="2"
+                                  ColumnDefinitions="*,*"
+                                  ColumnSpacing="15">
+
+                                <!-- CANTIDAD -->
+
+                                <VerticalStackLayout Grid.Column="0"
+                                                     Spacing="2">
+
+                                    <Label Text="Cantidad"
+                                           FontSize="11"
+                                           TextColor="{StaticResource SecondaryTextColor}" />
+
+                                    <Label Text="{Binding Cantidad}"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="{StaticResource TextColor}" />
+
+                                </VerticalStackLayout>
+
+
+                                <!-- FECHA -->
+
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="2">
+
+                                    <Label Text="Fecha de pago"
+                                           FontSize="11"
+                                           TextColor="{StaticResource SecondaryTextColor}" />
+
+                                    <Label Text="{Binding Fechapago,
+                                                         StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="{StaticResource TextColor}" />
+
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                        </Grid>
 
                     </Border>
+
                 </DataTemplate>
+
             </CollectionView.ItemTemplate>
+
         </CollectionView>
-        
-        
-        
-        
 
+    </Grid>
 
-
-
-
-    </VerticalStackLayout>
-    
 </ContentPage>

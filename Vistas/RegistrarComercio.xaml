@@ -1,139 +1,383 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppComercios.Vistas.RegistrarComercio"
              xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
-             Title="Registrar Comercio">
+             x:Class="AppComercios.Vistas.RegistrarComercio"
+             Title="Registrar Comercio"
+             BackgroundColor="#F5F7FA">
 
-    <ScrollView >
+    <ContentPage.Resources>
 
+        <!-- ================================= -->
+        <!-- COLORES -->
+        <!-- ================================= -->
 
-        <StackLayout >
+        <Color x:Key="PrimaryColor">#2563EB</Color>
 
+        <Color x:Key="TextColor">#1F2937</Color>
 
-            <Label 
-            Text="Llena los datos correctamente por favor"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Color x:Key="SecondaryTextColor">#6B7280</Color>
 
+        <Color x:Key="CardColor">#FFFFFF</Color>
 
-            <ActivityIndicator x:Name="actividad"/>
-
-
-            <VerticalStackLayout Margin="20" Spacing="4">
-
-                <Label Text="Datos del comercio"
-                   Padding="10"/>
-
-                <Entry
-                    x:Name="txtnombre"
-                    Placeholder="Nombre del Comercio"
-                    TextTransform="Uppercase"
-    />
+        <Color x:Key="BorderColor">#E5E7EB</Color>
 
 
-                <Picker x:Name="cbtipocomercio"
-                Title="Selecciona el Tipo de Comercio">
-                </Picker>
+        <!-- ================================= -->
+        <!-- SOMBRA -->
+        <!-- ================================= -->
+
+        <Shadow x:Key="CardShadow"
+                Brush="#22000000"
+                Offset="0,3"
+                Radius="8"
+                Opacity="0.20" />
+
+    </ContentPage.Resources>
 
 
-                <Picker x:Name="cbcategoria"
-                    Title="Selecciona el Giro">
-                </Picker>
+    <ScrollView>
+
+        <VerticalStackLayout Padding="16,10,16,30"
+                             Spacing="16">
 
 
+            <!-- ========================================= -->
+            <!-- ENCABEZADO -->
+            <!-- ========================================= -->
 
+            <VerticalStackLayout Spacing="4"
+                                 Margin="4,5,4,5">
 
-                <Entry 
-                x:Name="txtlicencia"
-                Placeholder="Licencia Mercantil"
-                    TextTransform="Uppercase"
-                />
+                <Label Text="Registrar Comercio"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource TextColor}" />
 
-            </VerticalStackLayout>
-
-
-            <VerticalStackLayout Margin="20" Spacing="4">
-
-                <Label Text="Datos del Propietario"
-         Padding="10"/>
-
-                <Entry 
-    x:Name="txtpropietarionombre"
-    Placeholder="Nombre del Propietario"
-                    TextTransform="Uppercase"
-    />
-
-                <Entry 
-x:Name="txttelefonoprop"
-Placeholder="Telefono del Propietario"
-                   Keyboard="Telephone"
-/>
-
-                <Entry 
-x:Name="txtemailprop"
-Placeholder="Email del Propietario"
-                    TextTransform="Uppercase"
-/>
-
+                <Label Text="Ingresa los datos del comercio correctamente"
+                       FontSize="14"
+                       TextColor="{StaticResource SecondaryTextColor}" />
 
             </VerticalStackLayout>
 
 
+            <!-- ========================================= -->
+            <!-- INDICADOR DE CARGA -->
+            <!-- ========================================= -->
 
-            <VerticalStackLayout Margin="20" Spacing="4">
-
-                <Label Text="Ubicacion"/>
-
-
-
-                <Picker x:Name="cbzona"
-     Title="Selecciona la zona">
-                </Picker>
-
-                <Entry
-                x:Name="txtlatitud"
-                    Placeholder="Latitud"
-                    IsEnabled="False"
-                />
-
-                <Entry
-    x:Name="txtlongitud"
-                    Placeholder="Longitud"
-                    IsEnabled="False"
-    />
+            <ActivityIndicator x:Name="actividad"
+                               IsVisible="False"
+                               IsRunning="False"
+                               Color="{StaticResource PrimaryColor}" />
 
 
-                <maps:Map x:Name="map" 
-             HeightRequest="300"
-             IsShowingUser="True"
-             
-             />
+            <!-- ================================================= -->
+            <!-- DATOS DEL COMERCIO -->
+            <!-- ================================================= -->
 
-                <Entry
-                    x:Name="txtobservaciones"
-                    Placeholder="Observaciones "
-                    TextTransform="Uppercase"
-                    />
+            <Border BackgroundColor="{StaticResource CardColor}"
+                    Stroke="{StaticResource BorderColor}"
+                    StrokeThickness="1"
+                    Padding="16"
+                    StrokeShape="RoundRectangle 16"
+                    Shadow="{StaticResource CardShadow}">
 
-            </VerticalStackLayout>
-
-
-            <Button 
-                x:Name="btnRegistrar"
-            Text="Registrar"
-            Clicked="Button_Clicked"
-                Margin="30"
-            />
+                <VerticalStackLayout Spacing="12">
 
 
+                    <!-- TÍTULO -->
 
-        </StackLayout>
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Border WidthRequest="40"
+                                HeightRequest="40"
+                                BackgroundColor="#EFF6FF"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10">
+
+                            <Label Text="🏪"
+                                   FontSize="20"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
+                        </Border>
+
+                        <VerticalStackLayout VerticalOptions="Center"
+                                             Spacing="0">
+
+                            <Label Text="Datos del comercio"
+                                   FontSize="17"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource TextColor}" />
+
+                            <Label Text="Información del establecimiento"
+                                   FontSize="12"
+                                   TextColor="{StaticResource SecondaryTextColor}" />
+
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
 
 
+                    <!-- NOMBRE -->
+
+                    <Entry x:Name="txtnombre"
+                           Placeholder="Nombre del comercio"
+                           TextTransform="Uppercase"
+                           ClearButtonVisibility="WhileEditing" />
 
 
+                    <!-- TIPO -->
 
+                    <Picker x:Name="cbtipocomercio"
+                            Title="Selecciona el tipo de comercio" />
+
+
+                    <!-- GIRO -->
+
+                    <Picker x:Name="cbcategoria"
+                            Title="Selecciona el giro" />
+
+
+                    <!-- LICENCIA -->
+
+                    <Entry x:Name="txtlicencia"
+                           Placeholder="Licencia mercantil"
+                           TextTransform="Uppercase"
+                           ClearButtonVisibility="WhileEditing" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- ================================================= -->
+            <!-- DATOS DEL PROPIETARIO -->
+            <!-- ================================================= -->
+
+            <Border BackgroundColor="{StaticResource CardColor}"
+                    Stroke="{StaticResource BorderColor}"
+                    StrokeThickness="1"
+                    Padding="16"
+                    StrokeShape="RoundRectangle 16"
+                    Shadow="{StaticResource CardShadow}">
+
+                <VerticalStackLayout Spacing="12">
+
+
+                    <!-- TÍTULO -->
+
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Border WidthRequest="40"
+                                HeightRequest="40"
+                                BackgroundColor="#EFF6FF"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10">
+
+                            <Label Text="👤"
+                                   FontSize="20"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
+                        </Border>
+
+                        <VerticalStackLayout VerticalOptions="Center"
+                                             Spacing="0">
+
+                            <Label Text="Datos del propietario"
+                                   FontSize="17"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource TextColor}" />
+
+                            <Label Text="Información del responsable"
+                                   FontSize="12"
+                                   TextColor="{StaticResource SecondaryTextColor}" />
+
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+
+
+                    <!-- NOMBRE -->
+
+                    <Entry x:Name="txtpropietarionombre"
+                           Placeholder="Nombre del propietario"
+                           TextTransform="Uppercase"
+                           ClearButtonVisibility="WhileEditing" />
+
+
+                    <!-- TELÉFONO -->
+
+                    <Entry x:Name="txttelefonoprop"
+                           Placeholder="Teléfono del propietario"
+                           Keyboard="Telephone"
+                           ClearButtonVisibility="WhileEditing" />
+
+
+                    <!-- EMAIL -->
+
+                    <Entry x:Name="txtemailprop"
+                           Placeholder="Correo electrónico"
+                           Keyboard="Email"
+                           ClearButtonVisibility="WhileEditing" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- ================================================= -->
+            <!-- UBICACIÓN -->
+            <!-- ================================================= -->
+
+            <Border BackgroundColor="{StaticResource CardColor}"
+                    Stroke="{StaticResource BorderColor}"
+                    StrokeThickness="1"
+                    Padding="16"
+                    StrokeShape="RoundRectangle 16"
+                    Shadow="{StaticResource CardShadow}">
+
+                <VerticalStackLayout Spacing="12">
+
+
+                    <!-- TÍTULO -->
+
+                    <HorizontalStackLayout Spacing="10">
+
+                        <Border WidthRequest="40"
+                                HeightRequest="40"
+                                BackgroundColor="#EFF6FF"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 10">
+
+                            <Label Text="📍"
+                                   FontSize="20"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
+                        </Border>
+
+                        <VerticalStackLayout VerticalOptions="Center"
+                                             Spacing="0">
+
+                            <Label Text="Ubicación"
+                                   FontSize="17"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource TextColor}" />
+
+                            <Label Text="Selecciona la zona y ubicación del comercio"
+                                   FontSize="12"
+                                   TextColor="{StaticResource SecondaryTextColor}" />
+
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+
+
+                    <!-- ZONA -->
+
+                    <Picker x:Name="cbzona"
+                            Title="Selecciona la zona" />
+
+
+                    <!-- COORDENADAS -->
+
+                    <Grid ColumnDefinitions="*,*"
+                          ColumnSpacing="10">
+
+                        <VerticalStackLayout Grid.Column="0"
+                                             Spacing="3">
+
+                            <Label Text="Latitud"
+                                   FontSize="12"
+                                   TextColor="{StaticResource SecondaryTextColor}" />
+
+                            <Entry x:Name="txtlatitud"
+                                   Placeholder="Latitud"
+                                   IsEnabled="False"
+                                   FontSize="13" />
+
+                        </VerticalStackLayout>
+
+
+                        <VerticalStackLayout Grid.Column="1"
+                                             Spacing="3">
+
+                            <Label Text="Longitud"
+                                   FontSize="12"
+                                   TextColor="{StaticResource SecondaryTextColor}" />
+
+                            <Entry x:Name="txtlongitud"
+                                   Placeholder="Longitud"
+                                   IsEnabled="False"
+                                   FontSize="13" />
+
+                        </VerticalStackLayout>
+
+                    </Grid>
+
+
+                    <!-- MAPA -->
+
+                    <Label Text="Ubicación en el mapa"
+                           FontSize="13"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TextColor}"
+                           Margin="0,5,0,0" />
+
+
+                    <Border StrokeThickness="0"
+                            StrokeShape="RoundRectangle 12"
+                            Padding="0">
+
+                        <maps:Map x:Name="map"
+                                  HeightRequest="260"
+                                  IsShowingUser="True" />
+
+                    </Border>
+
+
+                    <!-- OBSERVACIONES -->
+
+                    <Label Text="Observaciones"
+                           FontSize="13"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TextColor}"
+                           Margin="0,5,0,0" />
+
+
+                    <Editor x:Name="txtobservaciones"
+                            Placeholder="Escribe alguna observación..."
+                            TextTransform="Uppercase"
+                            AutoSize="TextChanges"
+                            MinimumHeightRequest="90"
+                            MaxLength="500" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- ================================================= -->
+            <!-- BOTÓN REGISTRAR -->
+            <!-- ================================================= -->
+
+            <Button x:Name="btnRegistrar"
+                    Text="✓  Registrar comercio"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="{StaticResource PrimaryColor}"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    HeightRequest="54"
+                    CornerRadius="14"
+                    Margin="0,5,0,0" />
+
+
+        </VerticalStackLayout>
 
     </ScrollView>
+
 </ContentPage>
