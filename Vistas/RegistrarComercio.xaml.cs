@@ -2,6 +2,7 @@ using AppComercios.Modelos;
 using AppComercios.Servicios;
 using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Maps;
+using Xamarin.Google.Crypto.Tink.Subtle;
 
 namespace AppComercios.Vistas;
 
@@ -144,11 +145,16 @@ public partial class RegistrarComercio : ContentPage
 
     private async void btntomarfoto_Clicked(object sender, EventArgs e)
     {
-        var foto = await MediaPicker.CapturePhotoAsync(); 
-        if(foto!= null)
+        var foto = await MediaPicker.CapturePhotoAsync();
+        var memoria = new MemoryStream();
+
+        if (foto!= null)
         {
             var memorystream = await foto.OpenReadAsync();
-            fotopreview.Source = ImageSource.FromStream(() => memorystream); 
+            fotopreview.Source = ImageSource.FromStream(() => memorystream);
+
+            await memorystream.CopyToAsync(memoria);
+            comer.Imagen = memoria.ToArray();                         
         }
 
     }

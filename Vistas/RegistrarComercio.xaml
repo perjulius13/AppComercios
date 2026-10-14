@@ -352,8 +352,6 @@
                     Clicked="btntomarfoto_Clicked"/>
 
 
-  
-
 
                     <Border StrokeThickness="0"
            StrokeShape="RoundRectangle 12"
@@ -362,9 +360,6 @@
                         <Image x:Name="fotopreview"/>
 
                     </Border>
-
-
-            
 
 
                     <!-- OBSERVACIONES -->

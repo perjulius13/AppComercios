@@ -68,7 +68,9 @@ namespace AppComercios.Modelos
         public int? Cp { get; set; }
 
         public string? NumeroDir { get; set; }
+        public int IdPropietario { get; set; }
 
+        public byte[]? Imagen { get; set; }
 
     }
 }
