@@ -142,4 +142,21 @@ public partial class RegistrarComercio : ContentPage
 
     }
 
+    private async void btntomarfoto_Clicked(object sender, EventArgs e)
+    {
+        var foto = await MediaPicker.CapturePhotoAsync(); 
+        if(foto!= null)
+        {
+            var memorystream = await foto.OpenReadAsync();
+            fotopreview.Source = ImageSource.FromStream(() => memorystream); 
+        }
+
+    }
+
+
+
+
+
+
+
 }

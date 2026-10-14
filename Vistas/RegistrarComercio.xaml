@@ -338,6 +338,34 @@
 
                     </Border>
 
+                    
+                    <Label Text="Fotografia"
+     FontSize="13"
+     FontAttributes="Bold"
+     TextColor="{StaticResource TextColor}"
+     Margin="0,5,0,0" />
+
+
+                    <Button x:Name="btntomarfoto"
+                            Text="Tomar foto"
+                            TextColor="White"
+                    Clicked="btntomarfoto_Clicked"/>
+
+
+  
+
+
+                    <Border StrokeThickness="0"
+           StrokeShape="RoundRectangle 12"
+           Padding="0">
+
+                        <Image x:Name="fotopreview"/>
+
+                    </Border>
+
+
+            
+
 
                     <!-- OBSERVACIONES -->
 
